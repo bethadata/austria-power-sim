@@ -1,0 +1,42 @@
+{
+    "powers_installed_2025": {
+        "hydro_river_power": 5.9,
+        "biomass_power": 0.6, 
+        "oil_power": 0.1, 
+        "natural_gas_power": 4.3,
+        "hydro_reservoir_power": 2.6,
+        "hydro_pumped_reservoir_power": 4,
+        "other_power": 0.9,
+        "waste_power": 0.1,
+        "wind_onshore_power": 4.1,
+        "solar_power": 9.8  
+    },
+    
+    "powers_installed_2024": {
+        "hydro_river_power": 5.9,
+        "biomass_power": 0.6, 
+        "oil_power": 0.1, 
+        "natural_gas_power": 4.2,
+        "hydro_reservoir_power": 2.5,
+        "hydro_pumped_reservoir_power": 3.5,
+        "other_power": 0.9,
+        "waste_power": 0.1,
+        "wind_onshore_power": 4.0,
+        "solar_power": 8.3 
+    },
+
+    "TYNDP_2024_NT_2040": {
+        "hydro_river_power": 5.350,
+        "biomass_power": 0.6, 
+        "oil_power": 0.1, 
+        "natural_gas_power": 3.2,
+        "hydro_reservoir_power": 2.8,
+        "hydro_pumped_reservoir_power": 6.9,
+        "other_power": 0.9,
+        "waste_power": 0.1,
+        "wind_onshore_power": 16.0,
+        "solar_power": 30,
+        "electrolyser": 6.9,
+        "battery": 0.24
+}  
+}
