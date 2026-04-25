@@ -28,7 +28,7 @@ export function usePlotly() {
   waste: '#7f6444',
   battery_charge: '#fb8072',
   battery_discharge: '#df6153',
-  gas_power: '#fbb078',
+  gas_power: '#fb9140',
   electrolyzer_power: '#ffa35d', 
   }
 

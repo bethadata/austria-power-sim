@@ -1,7 +1,7 @@
 <template>
   <CardTitleWithTooltip
-    title="Energy balance"
-    tooltip="Summed up generation and load data."
+    :title="t('bar_results.title')"
+    :tooltip="t('bar_results.tooltip')"
   />
   <div ref="plot"></div>
 </template>
@@ -11,16 +11,23 @@ import { onMounted, computed, watch, ref } from 'vue'
 import Plotly from "plotly.js-dist"
 import { useTheme } from 'vuetify'
 import { usePlotly } from '../../composables/usePlotly'
+import type { Data } from 'plotly.js'
 import CardTitleWithTooltip from './CardTitleWithTooltip.vue'
+
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const { colors, colorMap, getLayout, namesMap } = usePlotly()
 
 const theme = useTheme()
 
 type BarData = {
-  loadTotal: number
+  loadEntries: {
+    name: string,
+    total: number
+  },
   generation: {
-    name: string
+    name: string,
     total: number
   }[]
 }
@@ -31,18 +38,21 @@ const plot = ref()
 function drawBarChart() {
   if (!props.data) return
 
-  const { loadTotal, generation } = props.data
+  const { loadEntries, generation } = props.data
 
-  const traces = []
+  const traces: Data[] = []
 
-  // LOAD (single bar)
-  traces.push({
-    x: ['Load'],
-    y: [loadTotal],
-    type: 'bar',
-    hovertemplate: '%{y:.3f} TWh',
-    name: 'Load',
-    marker: { color: colorMap["load"]},
+  loadEntries.forEach((g, index) => {
+    traces.push({
+      x: ['Load'],
+      y: [g.total],
+      type: 'bar',
+      hovertemplate: '%{y:.3f} TWh',
+      name: namesMap[g.name],
+      marker: {
+        color: colorMap[g.name] ?? colors[index % colors.length],
+      },
+    })
   })
 
   // GENERATION (stacked bar)

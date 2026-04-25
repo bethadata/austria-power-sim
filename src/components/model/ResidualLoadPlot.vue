@@ -1,8 +1,8 @@
 <template>
   <CardTitleWithTooltip
-    title="Residual load duration curve"
-    tooltip="Shows how many hours a certain load gap exists. Positive means renewables don't meet demand, negative indicates a surplus.."
-  />
+    :title="t('residualload_plot.title')"
+    :tooltip="t('residualload_plot.tooltip')"
+    />
   <div ref="plot"></div>
 </template>
 
@@ -12,6 +12,9 @@ import Plotly from "plotly.js-dist"
 import { useTheme } from 'vuetify'
 import { usePlotly } from '../../composables/usePlotly'
 import CardTitleWithTooltip from './CardTitleWithTooltip.vue'
+
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const { getLayout, colorMap} = usePlotly()
 
@@ -30,7 +33,7 @@ function draw() {
       y: props.data["residual_base"].y,
       type: 'scatter',
       mode: 'lines',
-      name: 'Residual Load',
+      name: t('residualload_plot.base_trace_name'),
       line: {
         color: colorMap.load,
         width: 2,
@@ -41,7 +44,7 @@ function draw() {
       y: props.data["residual_storages"].y,
       type: 'scatter',
       mode: 'lines',
-      name: 'Residual Load incl. Battery + H2',
+      name: t('residualload_plot.advanced_trace_name'),
       line: {
         color: colorMap.battery_charge,
         width: 2,
@@ -53,7 +56,7 @@ function draw() {
   xaxis: {
   },
   yaxis: {
-    title: { text: 'Power (GW)' },
+    title: { text: t('residualload_plot.ylabel') },
   },
   })
 

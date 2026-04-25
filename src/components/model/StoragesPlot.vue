@@ -1,7 +1,7 @@
 <template>
   <CardTitleWithTooltip
-    title="Storage charges"
-    tooltip="Storage energy contents over simulation period."
+    :title="t('storages_plot.title')"
+    :tooltip="t('storages_plot.tooltip')"
   />
   <div ref="plot"></div>
 </template>
@@ -12,6 +12,9 @@ import Plotly from "plotly.js-dist"
 import { useTheme } from 'vuetify'
 import { usePlotly } from '../../composables/usePlotly'
 import CardTitleWithTooltip from './CardTitleWithTooltip.vue'
+
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const { getLayout, generateDateArray, colorMap} = usePlotly()
 
@@ -32,7 +35,7 @@ function draw() {
       y: props.data["battery"].y,
       type: 'scatter',
       mode: 'lines',
-      name: 'Battery charge',
+      name: t('storages_plot.battery_label'),
       line: {
         color: colorMap.battery_charge,
         width: 2,
@@ -43,7 +46,7 @@ function draw() {
       y: props.data["reservoir_storage"].y,
       type: 'scatter',
       mode: 'lines',
-      name: 'Reservoir storage',
+      name: t('storages_plot.reservoir_storage_label'),
       line: {
         color: colorMap.hydro_reservoir_storage_open,
         width: 2,
@@ -54,7 +57,7 @@ function draw() {
       y: props.data["hydrogen_storage"].y,
       type: 'scatter',
       mode: 'lines',
-      name: 'Hydrogen storage',
+      name: t('storages_plot.hydrogen_storage_label'),
       line: {
         color: colorMap.electrolyser_power,
         width: 2,
@@ -67,7 +70,7 @@ function draw() {
     type: "date"
   },
   yaxis: {
-    title: { text: 'Charge (GWh)' },
+    title: { text: t('storages_plot.ylabel') },
   },
   })
 

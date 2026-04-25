@@ -1,11 +1,11 @@
 <template>
-  <v-card class="pa-4 w-100">
-    <CardTitleWithTooltip
-        title="Timeseries"
-        tooltip="Choose between actual/historic generation timeseries and TYNDP-profiles. Be careful with historic data."
+  <v-card class="pa-4 pb-0 w-100">
+      <CardTitleWithTooltip
+        :title="t('timeseries_form.title')"
+        :tooltip="t('timeseries_form.tooltip')"
       />
       <v-select
-      label="Timeseries Scenario"
+      :label="t('timeseries_form.timeseries_scenario')"
       :items="timeseries"
       item-title="title"
       item-value="value"
@@ -21,11 +21,14 @@ import { ref, onMounted} from 'vue'
 import { useModel } from '../../composables/useModel'
 import CardTitleWithTooltip from './CardTitleWithTooltip.vue'
 
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
 const {loadTimeSeries} = useModel()
 
 const timeseries = [
-  { title: 'Actual Generation 2025', value: 'timeseries_2025'},
-  { title: 'Actual Generation 2024', value: 'timeseries_2024'},
+  { title: t('timeseries_form.timeseries_2025_title'), value: 'timeseries_2025'},
+  { title: t('timeseries_form.timeseries_2024_title'), value: 'timeseries_2024'},
 ]
 
 const selectedTimeSeries = ref('timeseries_2025')

@@ -1,15 +1,16 @@
 <template>
-  <v-card class="pa-4 w-100">
+  <v-card class="pa-4 pb-0 w-100">
+
     <CardTitleWithTooltip
-        title="Scenario"
-        tooltip="Choose between historic powers/loads and selected future TYNDP scenarios."
-      />
+    :title="t('loaddata_form.title')"
+    :tooltip="t('loaddata_form.tooltip')"
+    />
 
      <v-row class="d-flex">
 
       <v-col cols="12" md="6">
       <v-select
-        label="System / Load scenario"
+        :label="t('loaddata_form.load_scenario')"
         :items="systemScenario"
         item-title="title"
         item-value="value"
@@ -20,9 +21,9 @@
 
       <v-col cols="12" md="6">
       <UnitTextField
-        label="Total load"
+        :label="t('loaddata_form.load_label')" 
         unit="TWh"
-        tooltip="Total load / demand"
+        :tooltip="t('loaddata_form.load_label_tooltip')" 
         v-model="load"
       />
       </v-col>
@@ -39,11 +40,14 @@ import { useModel } from '../../composables/useModel'
 import UnitTextField from './UnitTextField.vue';
 import CardTitleWithTooltip from './CardTitleWithTooltip.vue';
 
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
 const {load, loadLoadData, setLoadScenario, loadPowersData, setPowerScenario} = useModel()
 
 const systemScenario = [
-  { title: 'Actual 2025', value: '2025',},
-  { title: 'Actual 2024', value: '2024',},
+  { title: 'Actual 2025 (ENTSO-E)', value: '2025',},
+  { title: 'Actual 2024 (ENTSO-E)', value: '2024',},
   { title: 'TYNDP2024 2030', value: "TYNDP_2024_NT_2030"},
   { title: 'TYNDP2024 2040', value: "TYNDP_2024_NT_2040"}
 ]
@@ -59,7 +63,7 @@ const selectedSystem = ref<SystemKey>('2025')
 const loadSystemMap: Record<SystemKey, { load: string; powers: string }> = {
   '2025': {load: 'load_2025', powers: 'powers_installed_2025'},
   '2024': {load: 'load_2024', powers: 'powers_installed_2024'},
-  'TYNDP_2024_NT_2030': {load: 'load_TYNDP_2024_NT_2030', powers: 'TYNDP_2024_NT_2040'},
+  'TYNDP_2024_NT_2030': {load: 'load_TYNDP_2024_NT_2030', powers: 'TYNDP_2024_NT_2030'},
   'TYNDP_2024_NT_2040': {load: 'load_TYNDP_2024_NT_2040', powers: 'TYNDP_2024_NT_2040'}
   }
 

@@ -1,0 +1,13 @@
+{
+  "header": {
+    "home": "Home",
+    "model": "Model & Data",
+    "about": "About",
+    "dark": "Dark Mode",
+    "light": "Light Mode"
+  },
+  "bar_results": {
+    "title": "Energiebilanz",
+    "tooltip": "Aufsummierte Erzeugungs- und Lastdaten."
+  }
+}

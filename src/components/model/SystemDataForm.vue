@@ -1,44 +1,42 @@
 <template>
   <v-card class="pa-4 flex-grow-1">
       <CardTitleWithTooltip
-        title="System data"
-        tooltip="Values are updated based on chosen scenario, but feel free to build your own scenario!"
+        :title="t('system_data_form.title')"
+        :tooltip="t('system_data_form.tooltip')"
       />
 
-    <v-divider class="mb-4"></v-divider>
-
     <UnitTextField
-      label="Solar power"
+      :label="t('system_data_form.solar_power_label')"
       unit="GW"
-      tooltip="Installed solar power"
-      v-model="powers.solar_power"
-    />
-
-    <UnitTextField
-      label="Wind onshore power"
-      unit="GW"
-      tooltip="Installed (onshore) wind power"
+      :tooltip="t('system_data_form.solar_power_tooltip')"
       v-model="powers.wind_onshore_power"
     />
 
     <UnitTextField
-      label="Hydro river power"
+      :label="t('system_data_form.wind_onshore_power_label')"
       unit="GW"
-      tooltip="Installed hydro river power"
+      :tooltip="t('system_data_form.wind_onshore_power_tooltip')"
+      v-model="powers.wind_onshore_power"
+    />
+
+    <UnitTextField
+      :label="t('system_data_form.hydro_river_power_label')"
+      unit="GW"
+      :tooltip="t('system_data_form.hydro_river_power_tooltip')"
       v-model="powers.hydro_river_power"
     />
 
     <UnitTextField
-      label="Hydro reservoir storage power"
+      :label="t('system_data_form.hydro_reservoir_power_label')"
       unit="GW"
-      tooltip="Installed hydro reservoir storage power"
+      :tooltip="t('system_data_form.hydro_reservoir_power_tooltip')"
       v-model="powers.hydro_reservoir_power"
     />
 
     <UnitTextField
-      label="Hydyro pumped storage power"
+      :label="t('system_data_form.hydro_pumped_reservoir_power_label')"
       unit="GW"
-      tooltip="Installed hydro reservoir storage power"
+      :tooltip="t('system_data_form.hydro_pumped_reservoir_power_tooltip')"
       v-model="powers.hydro_pumped_reservoir_power"
     />
 
@@ -46,23 +44,24 @@
 
     <v-switch
       v-model="useBatteries"
-      label="Enable batteries"
+      :label="t('system_data_form.enable_batteries')"
       inset
       class="mb-2"
       :color="useBatteries ? 'primary' : 'grey'"
     />
+
     <UnitTextField
-      label="Battery capacity"
+      :label="t('system_data_form.battery_capacity_label')"
       unit="GWh"
-      tooltip="Total battery capacity."
+      :tooltip="t('system_data_form.battery_capacity_tooltip')"
       v-model="batteryData.capacity"
       :disabled="!useBatteries"
     />
 
     <UnitTextField
-      label="Battery power"
+      :label="t('system_data_form.battery_power_label')"
       unit="GW"
-      tooltip="Total battery power."
+      :tooltip="t('system_data_form.battery_power_tooltip')"
       v-model="batteryData.power"
       :disabled="!useBatteries"
     />
@@ -71,32 +70,32 @@
 
     <v-switch
       v-model="useHydrogen"
-      label="Enable Hydrogen"
+      :label="t('system_data_form.enable_hydrogen')"
       inset
       class="mb-2"
       :color="useHydrogen ? 'primary' : 'grey'"
     />
 
     <UnitTextField
-      label="Hydrogen storage"
+      :label="t('system_data_form.hydrogen_storage_label')"
       unit="TWh"
-      tooltip="Total hydrogen storage in system."
+      :tooltip="t('system_data_form.hydrogen_storage_tooltip')"
       v-model="hydrogenData.storage_capacity"
       :disabled="!useHydrogen"
     />
 
     <UnitTextField
-      label="Electrolyser power"
+      :label="t('system_data_form.electrolyser_power_label')"
       unit="GW"
-      tooltip="Total eleltrolyser power."
+      :tooltip="t('system_data_form.electrolyser_power_tooltip')"
       v-model="hydrogenData.electrolyser_power"
       :disabled="!useHydrogen"
     />
 
     <UnitTextField
-      label="Gas power"
+      :label="t('system_data_form.gas_power_label')"
       unit="GW"
-      tooltip="Total gas power plant power."
+      :tooltip="t('system_data_form.gas_power_tooltip')"
       v-model="hydrogenData.gas_power"
       :disabled="!useHydrogen"
     />
@@ -109,6 +108,9 @@
   import '@mdi/font/css/materialdesignicons.css'
   import UnitTextField from './UnitTextField.vue';
   import CardTitleWithTooltip from './CardTitleWithTooltip.vue';
+
+  import { useI18n } from 'vue-i18n'
+  const { t } = useI18n()
 
   const { powers, batteryData, useBatteries, useHydrogen, hydrogenData} = useModel()
 

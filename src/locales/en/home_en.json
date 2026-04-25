@@ -1,0 +1,102 @@
+{
+  "header": {
+    "home": "Home",
+    "model": "Model & Data",
+    "about": "About",
+    "dark": "Dark Mode",
+    "light": "Light Mode"
+  },
+  "bar_results": {
+    "title": "Energy balance",
+    "tooltip": "Summed up generation and load data."
+  },
+  "loaddata_form": {
+    "title": "Scenario and load",
+    "tooltip": "Choose between historic powers/loads and selected future TYNDP scenarios.",
+    "load_scenario": "System / Load scenario",
+    "load_label": "Total load",
+    "load_label_tooltip": "Total load / demand"
+  },
+  "residualload_plot": {
+    "title": "Residual load duration curve",
+    "tooltip": "Shows how many hours a certain load gap exists. Positive means renewables don't meet demand, negative indicates a surplus.",
+    "base_trace_name": "Residual Load",
+    "advanced_trace_name": "Residual Load incl. Battery + H2",
+    "ylabel": "Power (GW)"
+  }, 
+  "results_plot": {
+    "title": "Load and generation",
+    "tooltip": "Shows the hourly load and generation profiles of technologies. Normalized timeseries are scaled to the power-values set under System data.",
+    "ylabel": "Power (GW)"
+  },
+  "storages_plot": {
+    "title": "Storage charges",
+    "tooltip": "Storage energy contents over simulation period.",
+    "battery_label": "Battery charge",
+    "reservoir_storage_label": "Reservoir storage",
+    "hydrogen_storage_label": "Hydrogen storage",
+    "ylabel": "'Charge (GWh)'"
+  },
+  "system_data_form": {
+    "title": "System data",
+    "tooltip": "Values are updated based on chosen scenario, but feel free to build your own scenario!",
+    "solar_power_label": "Solar power",
+    "solar_power_tooltip": "Installed solar power",
+
+    "wind_onshore_power_label": "Wind onshore power",
+    "wind_onshore_power_tooltip": "Installed (onshore) wind power",
+
+    "hydro_river_power_label": "Hydro river power",
+    "hydro_river_power_tooltip": "Installed hydro river power",
+
+    "hydro_reservoir_power_label": "Hydro reservoir storage power",
+    "hydro_reservoir_power_tooltip": "Installed hydro reservoir storage power",
+
+    "hydro_pumped_reservoir_power_label": "Hydro pumped storage power",
+    "hydro_pumped_reservoir_power_tooltip": "Installed pumped hydro storage power",
+
+    "enable_batteries": "Enable batteries",
+    "battery_capacity_label": "Battery capacity",
+    "battery_capacity_tooltip": "Total battery capacity.",
+    "battery_power_label": "Battery power",
+    "battery_power_tooltip": "Total battery power.",
+
+    "enable_hydrogen": "Enable hydrogen",
+    "hydrogen_storage_label": "Hydrogen storage",
+    "hydrogen_storage_tooltip": "Total hydrogen storage in system.",
+    "electrolyser_power_label": "Electrolyser power",
+    "electrolyser_power_tooltip": "Total electrolyser power.",
+    "gas_power_label": "Gas power",
+    "gas_power_tooltip": "Total gas power plant power."
+  },
+  "system_results": {
+    "renewable_share": "Renewable Share",
+    "renewable_share_tooltip": "Total renewable generation divided by load",
+    "overshoot_energy": "Overshoot energy",
+    "overshoot_energy_tooltip": "Excess generation after covering all loads (incl. storage & hydrogen)",
+    "load_gap": "Load Gap",
+    "load_gap_tooltip": "Unserved load after all generation (incl. storage & gas)"
+  },
+  "timeseries_form": {
+    "title": "Timeseries",
+    "tooltip": "Choose between actual/historic generation timeseries series.",
+    "timeseries_scenario": "Timeseries Scenario",
+    "timeseries_2025_title": "Actual Generation 2025 (ENTSO-E)",
+    "timeseries_2024_title": "Actual Generation 2024 (ENTSO-E)"
+  },
+  "bottom_info": {
+    "title": "More Information",
+    "tooltip": "",
+    "disclaimer": "This is a highly simplified model to understand system scales. It does not represent real-world system behavior, as several factors are neglected. For example, solar generation timeseries are not very well represented with historic data from ENTSO-E. Check the corresponding section on Limitations on the {link}.",
+    "disclaimer_link": "Models & Data page",
+    "disclaimer_title": "Disclaimer:"
+  },
+  "intro_card": {
+    "welcome_text": "Welcome to the Austria-Power-Simulator",
+    "intro_text": "Explore possible future pathways of the Austrian power system by simulating hourly electricity production and consumption. You can try out your own system scenarios by parametrizing {intro_text_bold} (batteries, hydrogen).",
+    "intro_text_bold": "total load, installed renewable energies, and energy storage",
+    "info_box_text": "Learn more about the methodology, data, assumptions, and {info_box_strong} on the {info_box_link}",
+    "info_box_strong": "important limitations",
+    "info_box_link": "Models & Data page" 
+  }
+}

@@ -3,40 +3,45 @@
 
     <IntroCard class="mb-6" />
 
-    <v-row>
+    <v-row density="comfortable">
       <v-col cols="12" md="2" class="d-flex">
         <ModelForm/>      
       </v-col>
 
       <v-col cols="12" md="10">
-        <v-row class="d-flex">
-        <v-col cols="12" md="6">
-          <BoundaryDataForm/> 
-        </v-col>
-        <v-col cols="12" md="6">
-          <TimeSeriesForm/>
-        </v-col>
-          
+
+        <v-row class = "align-stretch" density="comfortable">
+          <v-col cols="12" md="5" class>
+            <BoundaryDataForm/> 
+          </v-col>
+          <v-col cols="12" md="4">
+            <TimeSeriesForm/>
+          </v-col>
+          <v-col cols="12" md="3" class = "d-flex">
+            <SystemResults class="flex-grow-1" />
+          </v-col>
         </v-row>
-        <v-row>
-            <v-col cols="12" md="9">
-                <v-card class="pa-2">
+
+        <v-row class = "align-stretch" density="comfortable">
+            <v-col cols="12" md="9" class = "d-flex">
+                <v-card class="pa-2 flex-grow-1">
                 <ResultsPlot
                 v-if="combinedTimeSeriesData"
                 :data="combinedTimeSeriesData"
                 />
                 </v-card>
             </v-col>
+
             <v-col cols="12" md="3">
               <v-card class="pa-2">
                 <BarResults
-                v-if="summedData"
-                :data="summedData"
+                  v-if="summedData"
+                  :data="summedData"
                 />
-                </v-card>
+              </v-card>
             </v-col>
         </v-row>
-        <v-row>
+        <v-row density="comfortable">
           <v-col cols="12" md="6">
             <v-card class="pa-2">
               <StoragesPlot
@@ -71,6 +76,7 @@ import ResidualLoadPlot from '../components/model/ResidualLoadPlot.vue'
 import StoragesPlot from '../components/model/StoragesPlot.vue'
 import { useModel } from '../composables/useModel'
 import TimeSeriesForm from '../components/model/TimeSeriesForm.vue'
+import SystemResults from '../components/model/SystemResults.vue'
 
 const { summedData, storageCharges, combinedResiduals, combinedTimeSeriesData } = useModel()
 

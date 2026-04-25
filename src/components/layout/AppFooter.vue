@@ -7,12 +7,12 @@
     </div>
 
     <div class="d-flex align-center ga-1">
-      <v-btn icon variant="text" size="x-small" href="..." target="_blank">
+      <v-btn icon variant="text" size="x-small" href="https://github.com/bethadata/austria-power-sim" target="_blank">
         <v-icon size="16">mdi-github</v-icon>
       </v-btn>
 
-      <v-btn icon variant="text" size="x-small" href="..." target="_blank">
-        <v-icon size="16">mdi-cloud-outline</v-icon>
+      <v-btn icon variant="text" size="x-small" href="https://bsky.app/profile/thalerb.bsky.social" target="_blank">
+          <img src="../../assets/bluesky.svg" width="15" height="15" />
       </v-btn>
     </div>
   </div>

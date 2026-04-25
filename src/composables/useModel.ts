@@ -184,23 +184,128 @@ const residualLoadCurve = computed(() => {
 const summedData = computed(() => {
   if (!modifiedData.value) return null
 
-  // load in TWh
-  const load = modifiedData.value['load']
-  const loadTotal = load
-    ? load.y.reduce((s, v) => s + v/1000, 0)
-    : 0
+  const sumTWh = (trace: Trace) =>
+    trace.y.reduce((s, v) => s + v / 1000, 0)
 
-  // generation in TWh (split)
+  // --- LOAD BREAKDOWN ---
+  const loadEntries = []
+
+  // base load
+  const load = modifiedData.value['load']
+  if (load) {
+    loadEntries.push({
+      name: 'load',
+      total: sumTWh(load),
+    })
+  }
+
+  // battery charging → treated as load
+  const batteryCharge = batteryTraces.value?.charge
+  if (batteryCharge) {
+    loadEntries.push({
+      name: 'battery_charge',
+      total: sumTWh(batteryCharge),
+    })
+  }
+
+  // Electrolyzers 
+  const electrolyzerPower = hydrogenTraces.value?.electrolyzer_power
+  if (electrolyzerPower) {
+    loadEntries.push({
+      name: 'electrolyzer_power',
+      total: sumTWh(electrolyzerPower),
+    })
+  }
+
+  // --- GENERATION BREAKDOWN ---
   const generation = Object.entries(modifiedData.value)
     .filter(([_, trace]) => trace.type === 'generation')
     .map(([name, trace]) => ({
       name,
-      total: trace.y.reduce((s, v) => s + v/1000, 0),
+      total: sumTWh(trace),
     }))
 
+  // battery discharge → treated as generation
+  const batteryDischarge = batteryTraces.value?.discharge
+  if (batteryDischarge) {
+    generation.push({
+      name: 'battery_discharge',
+      total: sumTWh(batteryDischarge),
+    })
+  }
+
+  // gas power → treated as generation
+  const gasPower = hydrogenTraces.value?.gas_power
+  if (gasPower) {
+    generation.push({
+      name: 'gas_power',
+      total: sumTWh(gasPower),
+    })
+  }
+
+  const totalGeneration = generation.reduce((s, g) => s + g.total, 0)
+  const baseLoadTotal = load ? sumTWh(load) : 0
+  const renewableShare =
+    baseLoadTotal > 0 ? totalGeneration / baseLoadTotal : null
+
+  const timestamps = modifiedData.value.load?.y.length ?? 0
+
+  let overshootMWh = 0
+  let loadGapMWh = 0
+
+  for (let i = 0; i < timestamps; i++) {
+    // --- generation at timestep i ---
+    let gen = 0
+
+    // normal generation
+    for (const trace of Object.values(modifiedData.value)) {
+      if (trace.type === 'generation') {
+        gen += trace.y[i]
+      }
+    }
+
+    // battery discharge
+    if (batteryTraces.value?.discharge) {
+      gen += batteryTraces.value.discharge.y[i]
+    }
+
+    // gas power
+    if (hydrogenTraces.value?.gas_power) {
+      gen += hydrogenTraces.value.gas_power.y[i]
+    }
+
+    // --- load at timestep i ---
+    let loadTotal = 0
+
+    if (load) loadTotal += load.y[i]
+
+    if (batteryTraces.value?.charge) {
+      loadTotal += batteryTraces.value.charge.y[i]
+    }
+
+    if (hydrogenTraces.value?.electrolyzer_power) {
+      loadTotal += hydrogenTraces.value.electrolyzer_power.y[i]
+    }
+
+    // --- balance ---
+    const diff = gen - loadTotal
+
+    if (diff > 0) {
+      overshootMWh += diff
+    } else {
+      loadGapMWh += -diff
+    }
+  }
+
+  const overshootTWh = overshootMWh / 1000
+  const loadGapTWh = loadGapMWh / 1000
+
   return {
-    loadTotal,
+    loadEntries,
     generation,
+    renewableShare,
+    overshootTWh,
+    loadGapTWh
   }
 })
 

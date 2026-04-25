@@ -1,9 +1,8 @@
 <template>
-    <CardTitleWithTooltip
-    title="Load and generation"
-    tooltip="Shows the hourly load and generation profiles of technologies. 
-    Normalized timeseries are scaled to the power-values set under System data."
-  />
+  <CardTitleWithTooltip
+    :title="t('results_plot.title')"
+    :tooltip="t('results_plot.tooltip')"
+    />
   <div ref="plot"></div>
 </template>
 
@@ -13,6 +12,9 @@ import Plotly from "plotly.js-dist"
 import { useTheme } from 'vuetify'
 import { usePlotly } from '../../composables/usePlotly'
 import CardTitleWithTooltip from './CardTitleWithTooltip.vue'
+
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const { colors, colorMap, getLayout, generateDateArray, namesMap} = usePlotly()
 
@@ -94,7 +96,7 @@ function draw() {
     type: 'date',
   },
   yaxis: {
-    title: { text: 'Power (GW)' },
+    title: { text: t('results_plot.ylabel') },
   },
   })
 
