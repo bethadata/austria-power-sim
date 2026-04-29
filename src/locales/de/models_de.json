@@ -1,3 +1,67 @@
 {
-    
+  "models_page": {
+    "general": {
+      "title": "Allgemeines Modell",
+      "p1": "Das Modell basiert auf einer vereinfachten stündlichen Simulation von Stromangebot und -nachfrage. Stündliche Erzeugungszeitreihen aus erneuerbaren Energiequellen (z. B. Solar und Wind) werden mit einem stündlichen Lastprofil kombiniert.",
+      "p2": "Für jede Stunde des Jahres wird die Erzeugung aus folgenden Quellen aggregiert: Solar / PV, Onshore-Wind, Laufwasserkraft, Speicherkraft, Abfall / Biomasse.",
+      "p3": "Alle Erzeugungsprofile basieren auf historischen Zeitreihendaten (siehe Abschnitt „Datenquellen“ unten). Sämtliche Zeitreihen werden auf die im gewählten Szenario definierte installierte Leistung normiert, sowie auf die historische Erzeugungsmenge skaliert (basierend auf {link} Daten. Wenn die installierte Leistung (z. B. Solar-PV) angepasst wird, werden die entsprechenden Erzeugungsprofile proportional skaliert.",
+      "alert": "Hinweis: Biomasse und Waste werden derzeit ähnlich wie fluktuierende erneuerbare Energien mit festen historischen Profilen modelliert, die über das Jahr hinweg weitgehend konstant sind. In der Praxis könnte Biomasse jedoch deutlich flexibler eingesetzt werden, was im Modell derzeit noch nicht berücksichtigt ist.",
+      "link": "E-control",
+      "p4": "Zusätzlich zu den Erzeugungskapazitäten können Nutzer Energiespeicher (Batterien und Wasserstoffspeicher) sowie die Gesamtlast parametrisieren, die wiederum auf Basis der historischen Lastkurve skaliert wird."
+    },
+
+    "storage": {
+      "title": "Energiespeicher",     
+      "p1": "Das Modell umfasst drei Arten von Speichern: Reservoir/ Pumpspeicher (nicht explizit modelliert), Batteriespeicher und Wasserstoffspeicher.",
+      "reservoir_title": "Reservoir / Pumpspeicher",
+      "reservoir_points": [
+        "Pumpspeicherkraftwerke werden nicht explizit modelliert, da viele Anlagen in Österreich über natürliche Zuflüsse verfügen und daher als hybride Speichersysteme betrieben werden. Ihre Erzeugung ist deshalb in den historischen Wasserkraftdaten enthalten und wird nicht separat abgebildet.",
+        "Erzeugung von Reservoir / Pumpspeichern wird dementsprechend als historische Zeitreihe modelliert, die mit dne Leistungen skaliert. Der Füllstand der Speicher ist rein statisch als historische Zeitreihe abgebildet."
+      ],
+      "battery_title": "Batteriespeicher",
+      "battery_points": [
+        "Überschüssige erneuerbare Energie (Erzeugung übersteigt die Last) wird in Batterien gespeichert, begrenzt durch Speicherkapazität und Ladeleistung.",
+        "Bei einer Unterdeckung wird gespeicherte Energie zur Deckung der Nachfrage entladen (sofern verfügbar)."
+      ],
+
+      "hydrogen_title": "Wasserstoffspeicher",
+      "hydrogen_points": [
+        "Überschüssige erneuerbare Energie (nachdem die Batterien vollständig geladen sind) wird in Elektrolyseuren zur Wasserstoffproduktion genutzt.",
+        "Der erzeugte Wasserstoff wird bis zur maximalen Speicherkapazität gespeichert.",
+        "Bei einer Unterdeckung (und leeren Batterien) wird Wasserstoff über Gaskraftwerke wieder in Strom umgewandelt."
+      ],
+
+      "alert": "Dieses Verhalten der Speicher ist stark vereinfacht und bildet kein reales Marktverhalten ab. In der Praxis wird der Einsatz von Speichern durch Strompreise und Marktoptimierung bestimmt."
+    },
+
+    "scenarios": {
+      "title": "Szenarien und Datenquellen",
+      "text_options": "Es kann unter folgenden Szenarien gewählt werden:",
+      "options": [
+        "Historische installierte Leistungen basierend auf {link3} Daten",
+        "Zukünftige Szenarien basierend auf den TYNDP 2024 National Trends"
+      ],
+
+      "text": "Diese Szenarien basieren auf nationalen energiepolitischen Zielpfaden und werden im {link1} der europäischen Übertragungsnetzbetreiber verwendet. Die Zeitreihen basieren auf historischen Erzeugungsdaten von {link2}.",
+      "link1": "Ten-Year Network Development Plan (TYNDP)",
+      "link2": "ENTSO-E",
+      "link3": "E-control",
+
+      "alert": "Die Solarstromerzeugung ist in den ENTSO-E-Daten nicht vollständig abgebildet, da ein erheblicher Anteil hinter dem Zähler (z. B. Eigenverbrauch) genutzt wird. Dies kann zu einer Unterschätzung der tatsächlichen Solarerzeugung sowie zu einer scheinbar geringeren Last in Zeiten hoher Solarproduktion (Duck-curve) führen."
+    },
+
+    "limitations": {
+      "title": "Einschränkungen",
+      "intro": "Dieses Modell ist stark vereinfacht. Für detailliertere Analysen wird auf Studien wie den TYNDP verwiesen, die das europäische Stromsystem deutlich umfassender modellieren.",
+      "subtitle": "Wesentliche Vereinfachungen sind unter anderem:",
+      "items": [
+        "Kein grenzüberschreitender Austausch: Österreich wird als isoliertes System ohne Importe und Exporte modelliert.",
+        "Kupferplattenannahme: Keine räumliche Auflösung innerhalb Österreichs; Netzengpässe werden nicht berücksichtigt.",
+        "Keine Sektorkopplung: Wechselwirkungen mit Wärme-, Verkehrs- und Industriesektor werden nicht abgebildet.",
+        "Keine Wasserstoffnachfrage: Industrielle und verkehrsbezogene Nachfrage nach Wasserstoff wird nicht berücksichtigt.",
+        "Keine Nachfrageseitige Flexibilität: Optionen wie Demand Response oder Vehicle-to-Grid sind nicht enthalten.",
+        "Keine Abbildung von Eigenverbrauch: Behind-the-Meter-Erzeugung (z. B. PV-Anlagen oder industrielle Eigenproduktion) wird nicht berücksichtigt."
+      ]
+    }
+  }
 }

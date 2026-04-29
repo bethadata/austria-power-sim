@@ -18,7 +18,7 @@
               </template>
             </v-tooltip>
           </td>
-          <td class="kpi-value text-green text-right">
+          <td class="kpi-value text-success text-right">
             {{ renewableShare }} %
           </td>
         </tr>
@@ -39,7 +39,7 @@
               </template>
             </v-tooltip>
           </td>
-          <td class="kpi-value text-blue text-right">
+          <td class="kpi-value text-info text-right">
             {{ overshoot }} TWh
           </td>
         </tr>
@@ -60,7 +60,7 @@
               </template>
             </v-tooltip>
           </td>
-          <td class="kpi-value text-red text-right">
+          <td class="kpi-value text-error text-right">
             {{ loadGap }} TWh
           </td>
         </tr>
@@ -102,7 +102,7 @@
 <style scoped>
 .kpi-name {
   font-size: 0.85rem;
-  color: #555;
+  color: rgba(var(--v-theme-on-surface), 0.6);
   white-space: nowrap;
 }
 

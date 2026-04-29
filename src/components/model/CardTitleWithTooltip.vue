@@ -23,7 +23,7 @@
     </v-tooltip>
   </div>
 
-   <v-divider class="mb-4"></v-divider>
+  <v-divider v-if="showDivider" class="mb-4"></v-divider>
 
 </template>
 
@@ -40,6 +40,10 @@ defineProps({
   titleClass: {
     type: String,
     default: "text-h2",
+  },
+  showDivider: {
+    type: Boolean,
+    default: true,
   },
 })
 </script>

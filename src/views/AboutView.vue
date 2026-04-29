@@ -1,8 +1,10 @@
 <template>
   <v-container>
+    <v-row justify="center">
+    <v-col cols="12" md="9" lg="7">
 
     <!-- ABOUT -->
-    <v-card class="ps-6 mb-4" elevation="2">
+    <v-card class="ps-4 mb-4" elevation="2">
       <v-card-title>{{ t('about_page.about.title') }}</v-card-title>
 
       <v-card-text>
@@ -14,7 +16,7 @@
             <template #link>
               <a
                 href="https://github.com/bethadata/austria-power-sim"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 class="text-primary font-weight-medium"
               >
                 {{ t('about_page.about.github_link') }}
@@ -28,7 +30,7 @@
             <template #link>
               <a
                 href="https://bethadata.github.io/austria-transition-tracker/"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 class="text-primary font-weight-medium"
               >
                 {{ t('about_page.about.tracker_link') }}
@@ -40,7 +42,7 @@
     </v-card>
 
     <!-- PRIVACY -->
-    <v-card class="ps-6 mb-4" elevation="2">
+    <v-card class="ps-4 mb-4" elevation="2">
       <v-card-title>{{ t('about_page.privacy.title') }}</v-card-title>
 
       <v-card-text>
@@ -48,7 +50,7 @@
           <template #link1>
             <a
               href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
               {{ t('about_page.privacy.link1') }}
             </a>
@@ -57,7 +59,7 @@
           <template #link2>
             <a
               href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
               {{ t('about_page.privacy.link2') }}
             </a>
@@ -67,7 +69,7 @@
     </v-card>
 
     <!-- DISCLAIMER -->
-    <v-card class="ps-6 mb-4" elevation="2">
+    <v-card class="ps-4 mb-4" elevation="2">
       <v-card-title>{{ t('about_page.disclaimer.title') }}</v-card-title>
 
       <v-card-text>
@@ -78,7 +80,7 @@
     </v-card>
 
     <!-- AI DISCLAIMER -->
-    <v-card class="ps-6 mb-4" elevation="2">
+    <v-card class="ps-4 mb-4" elevation="2">
       <v-card-title>{{ t('about_page.ai.title') }}</v-card-title>
 
       <v-card-text>
@@ -86,6 +88,8 @@
       </v-card-text>
     </v-card>
 
+    </v-col>
+    </v-row>
   </v-container>
 </template>
 

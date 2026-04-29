@@ -5,7 +5,7 @@
 
     <v-row density="comfortable">
       <v-col cols="12" md="2" class="d-flex">
-        <ModelForm/>      
+        <ModelForm/>
       </v-col>
 
       <v-col cols="12" md="10">
@@ -59,9 +59,11 @@
             </v-card>
           </v-col>
         </v-row>
+        <v-row>
+          <BottomInfo/>
+        </v-row>
       </v-col>
     </v-row>
-    <BottomInfo class="mt-6" />
   </v-container>
 </template>
 

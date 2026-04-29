@@ -19,23 +19,15 @@
   },
   "residualload_plot": {
     "title": "Residual load duration curve",
-    "tooltip": "Shows how many hours a certain load gap exists. Positive means renewables don't meet demand, negative indicates a surplus.",
-    "base_trace_name": "Residual Load",
-    "advanced_trace_name": "Residual Load incl. Battery + H2",
-    "ylabel": "Power (GW)"
+    "tooltip": "Shows how many hours a certain load gap exists. Positive means renewables don't meet demand, negative indicates a surplus."
   }, 
   "results_plot": {
     "title": "Load and generation",
-    "tooltip": "Shows the hourly load and generation profiles of technologies. Normalized timeseries are scaled to the power-values set under System data.",
-    "ylabel": "Power (GW)"
+    "tooltip": "Shows the hourly load and generation profiles of technologies. Normalized timeseries are scaled to the power-values set under System data."
   },
   "storages_plot": {
     "title": "Storage charges",
-    "tooltip": "Storage energy contents over simulation period.",
-    "battery_label": "Battery charge",
-    "reservoir_storage_label": "Reservoir storage",
-    "hydrogen_storage_label": "Hydrogen storage",
-    "ylabel": "'Charge (GWh)'"
+    "tooltip": "Storage energy contents over simulation period."
   },
   "system_data_form": {
     "title": "System data",
@@ -71,7 +63,7 @@
   },
   "system_results": {
     "renewable_share": "Renewable Share",
-    "renewable_share_tooltip": "Total renewable generation divided by load",
+    "renewable_share_tooltip": "Total renewable generation (excluding waste) divided by load",
     "overshoot_energy": "Overshoot energy",
     "overshoot_energy_tooltip": "Excess generation after covering all loads (incl. storage & hydrogen)",
     "load_gap": "Load Gap",
@@ -80,16 +72,15 @@
   "timeseries_form": {
     "title": "Timeseries",
     "tooltip": "Choose between actual/historic generation timeseries series.",
-    "timeseries_scenario": "Timeseries Scenario",
-    "timeseries_2025_title": "Actual Generation 2025 (ENTSO-E)",
-    "timeseries_2024_title": "Actual Generation 2024 (ENTSO-E)"
+    "timeseries_scenario": "Timeseries Scenario"
   },
   "bottom_info": {
     "title": "More Information",
     "tooltip": "",
+    "info": "The model does not include any fossil-fuelled generation, which in Austria is mainly natural gas. For a non-100% renewable energy system, the residual load (load minus renewable generation) must be covered by either fossil-fuelled power generation or imports — neither of which is part of this model. Therefore, the emission footprint of the system cannot be calculated directly. However, the Load Gap parameter gives an upper bound for the required natural gas-based power production. Multiplying it by approximately 0.2 yields an estimate of the CO₂ footprint in Mt.",
     "disclaimer": "This is a highly simplified model to understand system scales. It does not represent real-world system behavior, as several factors are neglected. For example, solar generation timeseries are not very well represented with historic data from ENTSO-E. Check the corresponding section on Limitations on the {link}.",
     "disclaimer_link": "Models & Data page",
-    "disclaimer_title": "Disclaimer:"
+    "disclaimer_title": "Disclaimer: "
   },
   "intro_card": {
     "welcome_text": "Welcome to the Austria-Power-Simulator",

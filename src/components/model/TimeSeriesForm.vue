@@ -27,11 +27,10 @@ const { t } = useI18n()
 const {loadTimeSeries} = useModel()
 
 const timeseries = [
-  { title: t('timeseries_form.timeseries_2025_title'), value: 'timeseries_2025'},
-  { title: t('timeseries_form.timeseries_2024_title'), value: 'timeseries_2024'},
+  { title: "Actual Generation 2024 (ENTSO-E)", value: 'timeseries_2024'},
 ]
 
-const selectedTimeSeries = ref('timeseries_2025')
+const selectedTimeSeries = ref('timeseries_2024')
 
 async function applyTimeSeries() {
   await loadTimeSeries(selectedTimeSeries.value)

@@ -9,35 +9,35 @@
       :label="t('system_data_form.solar_power_label')"
       unit="GW"
       :tooltip="t('system_data_form.solar_power_tooltip')"
-      v-model="powers.wind_onshore_power"
+      v-model="powers.solar"
     />
 
     <UnitTextField
       :label="t('system_data_form.wind_onshore_power_label')"
       unit="GW"
       :tooltip="t('system_data_form.wind_onshore_power_tooltip')"
-      v-model="powers.wind_onshore_power"
+      v-model="powers.wind_onshore"
     />
 
     <UnitTextField
       :label="t('system_data_form.hydro_river_power_label')"
       unit="GW"
       :tooltip="t('system_data_form.hydro_river_power_tooltip')"
-      v-model="powers.hydro_river_power"
+      v-model="powers.hydro_river"
     />
 
     <UnitTextField
       :label="t('system_data_form.hydro_reservoir_power_label')"
       unit="GW"
       :tooltip="t('system_data_form.hydro_reservoir_power_tooltip')"
-      v-model="powers.hydro_reservoir_power"
+      v-model="powers.hydro_reservoir"
     />
 
     <UnitTextField
       :label="t('system_data_form.hydro_pumped_reservoir_power_label')"
       unit="GW"
       :tooltip="t('system_data_form.hydro_pumped_reservoir_power_tooltip')"
-      v-model="powers.hydro_pumped_reservoir_power"
+      v-model="powers.hydro_pumped_reservoir"
     />
 
     <v-divider class="mb-4"></v-divider>

@@ -1,3 +1,34 @@
 {
-    
+  "about_page": {
+    "about": {
+      "title": "Über dieses Projekt",
+      "intro_1": "Diese Seite ist ein rein privates Projekt und entstand aus der persönlichen Motivation heraus, mögliche Zukunftsszenarien zu untersuchen und zu verstehen, wie das österreichische Energiesystem durch den Einsatz erneuerbarer Energien in Kombination mit Energiespeichern klimaneutral werden kann.",
+      "intro_2": "Aufgrund der schwankenden Erzeugung insbesondere von Wind- und Solarenergie müssen solche Szenarien idealerweise mit hoher zeitlicher Auflösung, etwa stündlich, simuliert werden. Nur so lassen sich sowohl tageszeitliche Muster (z. B. Solarerzeugung am Tag) als auch saisonale Effekte realistisch abbilden.",
+
+      "github_text": "Der vollständige Code dieser Seite ist im {link} verfügbar. Feedback, konstruktive Kritik oder direkte Beiträge sind jederzeit willkommen und werden sehr geschätzt!",
+      "github_link": "entsprechenden GitHub-Repository",
+
+      "tracker_text": "Bei Interesse kann auch gerne meine {link} besucht werden, auf der ich zahlreiche Datensätze zur nachhaltigen Transformation Österreichs sammle und versuche, die jährlichen Treibhausgasemissionen auf Basis aktueller Energieverbrauchsdaten zu prognostizieren.",
+      "tracker_link": "Austria-Transition-Tracker-Seite"
+    },
+
+    "privacy": {
+      "title": "Datenschutz",
+      "text": "Diese Seite wird über GitHub Pages bereitgestellt. GitHub kann beim Besuch dieser Website bestimmte Nutzerdaten wie IP-Adressen erfassen. Weitere Informationen sind auf der {link1}-Seite zu finden, sowie in der dort verlinkten allgemeinen {link2}. Abgesehen von den direkt durch GitHub erhobenen Daten werden auf dieser Seite keine weiteren Daten erfasst und keine Cookies gespeichert.",
+      "link1": "GitHub Pages",
+      "link2": "Datenschutzerklärung von GitHub"
+    },
+
+    "disclaimer": {
+      "title": "Haftungsausschluss",
+      "text_1": "Die Inhalte dieser Website dienen ausschließlich allgemeinen Informationszwecken.",
+      "text_2": "Es wird zwar angestrebt, die bereitgestellten Informationen aktuell und korrekt zu halten, jedoch wird keinerlei Gewähr für die Vollständigkeit, Richtigkeit, Zuverlässigkeit, Eignung oder Verfügbarkeit der Website oder der enthaltenen Informationen, Daten oder zugehörigen Grafiken für irgendeinen Zweck übernommen. Jegliches Vertrauen in diese Informationen erfolgt daher auf eigene Verantwortung.",
+      "text_3": "Über diese Website können Links zu externen Websites aufgerufen werden. Auf deren Inhalte und Verfügbarkeit besteht keinerlei Einfluss."
+    },
+
+    "ai": {
+      "title": "Hinweis zu KI-Unterstützung",
+      "text": "Für die Erstellung von Teilen des Codes sowie die sprachliche Überarbeitung einzelner Texte wurden Large Language Models (z. B. GPT, Claude Code) verwendet. Sämtlicher generierter Code wurde jedoch von mir überprüft und validiert, und sowohl die Projektarchitektur als auch das Design, die Modelle und die zugrunde liegenden Berechnungsideen stammen vollständig aus eigener Hand."
+    }
+  }
 }

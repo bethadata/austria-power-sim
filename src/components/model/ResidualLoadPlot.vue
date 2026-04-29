@@ -33,7 +33,7 @@ function draw() {
       y: props.data["residual_base"].y,
       type: 'scatter',
       mode: 'lines',
-      name: t('residualload_plot.base_trace_name'),
+      name: "Residual Load",
       line: {
         color: colorMap.load,
         width: 2,
@@ -44,7 +44,7 @@ function draw() {
       y: props.data["residual_storages"].y,
       type: 'scatter',
       mode: 'lines',
-      name: t('residualload_plot.advanced_trace_name'),
+      name: "Residual Load incl. Battery + H2",
       line: {
         color: colorMap.battery_charge,
         width: 2,
@@ -56,7 +56,7 @@ function draw() {
   xaxis: {
   },
   yaxis: {
-    title: { text: t('residualload_plot.ylabel') },
+    title: { text: "Power (GW)" },
   },
   })
 

@@ -1,0 +1,14 @@
+{
+  "2024": {
+    "hydro_river": 33.26,
+    "hydro_reservoir": 8.42,
+    "hydro_pumped_reservoir": 4.10,
+    "biomass": 3.17,
+    "solar": 7.64,
+    "wind_onshore": 9.25,
+    "waste": 2.24,
+    "fossil": 10.23,
+    "natural_gas": 7.61
+  }
+  
+}

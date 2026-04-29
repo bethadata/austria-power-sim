@@ -27,7 +27,7 @@ const props = defineProps<{
 const plot = ref()
 
 function draw() {
-  const startDate = new Date('2025-01-01T00:00:00')
+  const startDate = new Date('2024-01-01T00:00:00')
 
   const traces = Object.entries(props.data).map(([name, obj], index) => {
     const yValues = obj.y
@@ -47,9 +47,10 @@ function draw() {
           color: colorMap[name] ?? colors[index % colors.length],
           width: 1,
         },
+        hovertemplate: '%{x|%d. %b %H:%M}<br>%{y:.2f} GW<extra></extra>',
       }
-    }    
-    
+    }
+
     // GENERATION → stacked area
     else if (type == "generation") {
     return {
@@ -59,7 +60,8 @@ function draw() {
           mode: 'none',
           stackgroup: 'one',
           name: namesMap[name],
-          fillcolor: (colorMap[name] ?? colors[index % colors.length]), 
+          fillcolor: (colorMap[name] ?? colors[index % colors.length]),
+          hovertemplate: '%{x|%d. %b %H:%M}<br>%{y:.2f} GW<extra></extra>',
     }
     }
 
@@ -72,6 +74,7 @@ function draw() {
         stackgroup: 'two',
         name: namesMap[name],
         fillcolor: colorMap[name] ?? '#888',
+        hovertemplate: '%{x|%d. %b %H:%M}<br>%{y:.2f} GW<extra></extra>',
       }
     }
 
@@ -84,6 +87,7 @@ function draw() {
       stackgroup: 'one', // same as generation
       name: namesMap[name],
       fillcolor: colorMap[name] ?? '#444',
+      hovertemplate: '%{x|%d. %b %H:%M}<br>%{y:.2f} GW<extra></extra>',
     }
   }
  
@@ -96,7 +100,7 @@ function draw() {
     type: 'date',
   },
   yaxis: {
-    title: { text: t('results_plot.ylabel') },
+    title: { text: "Power (GW)" },
   },
   })
 

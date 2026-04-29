@@ -16,7 +16,8 @@
     </v-btn>
 
     <v-btn @click="toggleDarkMode" variant="tonal">
-      {{ isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode" }}
+      <v-icon start>{{ isDarkMode ? 'mdi-weather-sunny' : 'mdi-moon-waning-crescent' }}</v-icon>
+      {{ isDarkMode ? t('header.light') : t('header.dark') }}
     </v-btn>
   </v-app-bar>
 </template>
@@ -53,3 +54,10 @@ onMounted(() => {
   }
 })
 </script>
+
+<style scoped>
+.v-btn--active {
+  color: rgb(var(--v-theme-primary));
+  font-weight: 600;
+}
+</style>

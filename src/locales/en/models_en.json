@@ -1,3 +1,69 @@
 {
-    
+  "models_page": {
+    "general": {
+      "title": "General model",
+      "p1": "The model is based on a simplified hourly simulation of electricity supply and demand. Hourly generation time series from renewable energy sources (e.g., solar and wind) are combined with an hourly load profile.",
+      "p2": "For each hour of the year, generation from the following sources is aggregated: Solar / PV, Onshore wind, Run-of-river hydro, Reservoir hydro, Waste / Biomass.",
+      "p3": "All generation profiles are based on historical time series data (see Data Sources section below). All time series are normalized to the installed capacity defined in the selected scenario and scaled to the historical generation volume (based on {link} data). When the user adjusts installed capacity (e.g., solar PV), the corresponding generation profiles are scaled proportionally.",
+      "alert": "Note: Biomass and waste are currently modeled similarly to variable renewable sources with fixed historic profiles, which are mostly flat over the year. In practice, biomass generation could also be dispatched more flexibly, but this capability is not yet represented in the model.",
+      "link": "E-Control",
+      "p4": "In addition to generation capacities, users can parameterize energy storage systems (battery and hydrogen storage) and the total load, which is again scaled with the historic load curve."
+    },
+
+    "storage": {
+      "title": "Energy storage",
+      "p1": "The model includes three types of storage: Reservoir / Pumped Storage (not explicitly modeled), battery storage, and hydrogen storage.",
+
+      "reservoir_title": "Reservoir / Pumped Storage",
+      "reservoir_points": [
+        "Pumped storage power plants are not explicitly modeled, as many facilities in Austria have natural inflows and therefore operate as hybrid storage systems. Their generation is therefore included in the historical hydro data and not modeled separately.",
+        "Generation from reservoir / pumped storage is accordingly modeled as a historical time series scaled by the installed capacity. The storage level is represented purely statically as a historical time series."
+      ],
+
+      "battery_title": "Battery storage",
+      "battery_points": [
+        "Surplus renewable energy (generation exceeds load) is stored in batteries, limited by storage capacity and charging power.",
+        "When there is a supply deficit, stored energy is discharged to meet demand (if available)."
+      ],
+
+      "hydrogen_title": "Hydrogen storage",
+      "hydrogen_points": [
+        "Excess renewable energy (after batteries are full) is used in electrolyzers to produce hydrogen.",
+        "Hydrogen is stored up to the maximum storage capacity.",
+        "In case of a supply deficit (and empty batteries), hydrogen is converted back to electricity using gas power plants."
+      ],
+
+      "alert": "This simplified storage dispatch does not reflect real market behavior. In reality, storage operation is driven by electricity prices and market optimization."
+    },
+
+    "scenarios": {
+      "title": "Scenarios and Data Sources",
+      "text_options": "The following scenarios can be chosen:",
+      "options": [
+        "Historical installed capacities based on {link3} data",
+        "Future scenarios based on the TYNDP 2024 National Trends"
+      ],
+
+      "text": "These scenarios reflect national policy projections and are used in the {link1} of European Transmission System Operators. Time series data are based on historical production data from {link2}.",
+      "link1": "Ten-Year Network Development Plan (TYNDP)",
+      "link2": "ENTSO-E",
+      "link3": "E-Control",
+
+      "alert": "Solar generation is not fully represented in ENTSO-E data because a significant share of solar energy is consumed behind the meter. This might lead to underestimated solar generation and a reduced apparent load during high solar production periods (duck curve)."
+    },
+
+    "limitations": {
+      "title": "Limitations",
+      "intro": "This model is highly simplified. For more detailed analysis, users are referred to, for example, TYNDP studies, which model the European power system in much greater detail.",
+      "subtitle": "Key simplifications include, among others:",
+      "items": [
+        "No cross-border exchange: Austria is modeled as an isolated system without imports/exports.",
+        "Copper plate assumption: No spatial resolution within Austria; grid constraints are not represented.",
+        "Sector coupling not included: Interactions with heat, transport, and industry sectors are excluded.",
+        "Hydrogen demand not modeled: Industrial and transport hydrogen demand is not considered.",
+        "No demand-side flexibility: Options like demand response or vehicle-to-grid are not included.",
+        "No self-consumption modeling: Behind-the-meter generation (e.g., rooftop PV, industrial generation) is not captured."
+      ]
+    }
+  }
 }

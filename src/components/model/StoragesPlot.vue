@@ -35,7 +35,7 @@ function draw() {
       y: props.data["battery"].y,
       type: 'scatter',
       mode: 'lines',
-      name: t('storages_plot.battery_label'),
+      name: "Battery",
       line: {
         color: colorMap.battery_charge,
         width: 2,
@@ -46,7 +46,7 @@ function draw() {
       y: props.data["reservoir_storage"].y,
       type: 'scatter',
       mode: 'lines',
-      name: t('storages_plot.reservoir_storage_label'),
+      name: "Reservoir",
       line: {
         color: colorMap.hydro_reservoir_storage_open,
         width: 2,
@@ -57,7 +57,7 @@ function draw() {
       y: props.data["hydrogen_storage"].y,
       type: 'scatter',
       mode: 'lines',
-      name: t('storages_plot.hydrogen_storage_label'),
+      name: "Hydrogen",
       line: {
         color: colorMap.electrolyser_power,
         width: 2,
@@ -70,7 +70,8 @@ function draw() {
     type: "date"
   },
   yaxis: {
-    title: { text: t('storages_plot.ylabel') },
+    title: { text: "Energy (GWh)", standoff: 10},
+    automargin: true
   },
   })
 

@@ -7,11 +7,11 @@
     </div>
 
     <div class="d-flex align-center ga-1">
-      <v-btn icon variant="text" size="x-small" href="https://github.com/bethadata/austria-power-sim" target="_blank">
+      <v-btn icon variant="text" size="x-small" href="https://github.com/bethadata/austria-power-sim" target="_blank" rel="noopener noreferrer">
         <v-icon size="16">mdi-github</v-icon>
       </v-btn>
 
-      <v-btn icon variant="text" size="x-small" href="https://bsky.app/profile/thalerb.bsky.social" target="_blank">
+      <v-btn icon variant="text" size="x-small" href="https://bsky.app/profile/thalerb.bsky.social" target="_blank" rel="noopener noreferrer">
           <img src="../../assets/bluesky.svg" width="15" height="15" />
       </v-btn>
     </div>
@@ -31,7 +31,7 @@
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: left;
+  align-items: center;
 
   padding: 0 6px;
   width: 100%;
