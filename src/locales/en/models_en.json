@@ -16,8 +16,8 @@
 
       "reservoir_title": "Reservoir / Pumped Storage",
       "reservoir_points": [
-        "Pumped storage power plants are not explicitly modeled, as many facilities in Austria have natural inflows and therefore operate as hybrid storage systems. Their generation is therefore included in the historical hydro data and not modeled separately.",
-        "Generation from reservoir / pumped storage is accordingly modeled as a historical time series scaled by the installed capacity. The storage level is represented purely statically as a historical time series."
+        "Many reservoir and pumped storage facilities in Austria have natural inflows and therefore operate as hybrid storage systems. They are not explicitly modeled; instead, their net generation is represented as a historical time series scaled by the installed capacity. Pumped storage consumption (energy used for uphill pumping) is neglected in the model.",
+        "The generation profile is scaled using the historical net generation volume, which excludes energy generated from previously pumped water — meaning only natural inflow-based generation contributes to the scaling reference. The storage level is represented purely statically as a historical time series."
       ],
 
       "battery_title": "Battery storage",
@@ -28,9 +28,9 @@
 
       "hydrogen_title": "Hydrogen storage",
       "hydrogen_points": [
-        "Excess renewable energy (after batteries are full) is used in electrolyzers to produce hydrogen.",
+        "Excess renewable energy (after batteries are full) is used in electrolyzers to produce hydrogen, assuming an electrolyzer efficiency of 70%.",
         "Hydrogen is stored up to the maximum storage capacity.",
-        "In case of a supply deficit (and empty batteries), hydrogen is converted back to electricity using gas power plants."
+        "In case of a supply deficit (and empty batteries), hydrogen is converted back to electricity using gas power plants, assuming a conversion efficiency of 50%."
       ],
 
       "alert": "This simplified storage dispatch does not reflect real market behavior. In reality, storage operation is driven by electricity prices and market optimization."
@@ -44,10 +44,11 @@
         "Future scenarios based on the TYNDP 2024 National Trends"
       ],
 
-      "text": "These scenarios reflect national policy projections and are used in the {link1} of European Transmission System Operators. Time series data are based on historical production data from {link2}.",
+      "text": "These scenarios reflect national policy projections and are used in the {link1} of European Transmission System Operators. Time series data are based on historical production data from {link2}, downloaded via {link_energycharts}.",
       "link1": "Ten-Year Network Development Plan (TYNDP)",
       "link2": "ENTSO-E",
       "link3": "E-Control",
+      "link_energycharts": "energy-charts.info",
 
       "alert": "Solar generation is not fully represented in ENTSO-E data because a significant share of solar energy is consumed behind the meter. This might lead to underestimated solar generation and a reduced apparent load during high solar production periods (duck curve)."
     },

@@ -93,6 +93,12 @@
             </a>
           </template>
 
+          <template #link_energycharts>
+            <a href="https://www.energy-charts.info" target="_blank" rel="noopener noreferrer">
+              {{ t('models_page.scenarios.link_energycharts') }}
+            </a>
+          </template>
+
         </i18n-t>
 
         <v-alert type="info" variant="tonal" class="mb-6">

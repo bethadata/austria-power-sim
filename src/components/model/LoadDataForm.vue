@@ -46,12 +46,14 @@ const { t } = useI18n()
 const {load, loadLoadData, setLoadScenario, loadPowersData, setPowerScenario} = useModel()
 
 const systemScenario = [
+  { title: 'Actual 2023 (E-control)', value: '2023',},
   { title: 'Actual 2024 (E-control)', value: '2024',},
   { title: 'TYNDP2024 2030', value: "TYNDP_2024_NT_2030"},
   { title: 'TYNDP2024 2040', value: "TYNDP_2024_NT_2040"}
 ]
 
 type SystemKey =
+  | '2023'
   | '2024'
   | 'TYNDP_2024_NT_2030'
   | 'TYNDP_2024_NT_2040'
@@ -59,6 +61,7 @@ type SystemKey =
 const selectedSystem = ref<SystemKey>('2024')
 
 const loadSystemMap: Record<SystemKey, { load: string; powers: string }> = {
+  '2023': {load: 'load_2023', powers: 'powers_installed_2023'},
   '2024': {load: 'load_2024', powers: 'powers_installed_2024'},
   'TYNDP_2024_NT_2030': {load: 'load_TYNDP_2024_NT_2030', powers: 'TYNDP_2024_NT_2030'},
   'TYNDP_2024_NT_2040': {load: 'load_TYNDP_2024_NT_2040', powers: 'TYNDP_2024_NT_2040'}

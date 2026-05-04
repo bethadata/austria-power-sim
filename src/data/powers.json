@@ -9,7 +9,25 @@
         "solar": 8.36,
         "natural_gas": 4.74
     },
-
+    "powers_installed_2023": {
+        "hydro_river": 5.99,
+        "biomass": 0.54,
+        "hydro_reservoir": 3.39,
+        "hydro_pumped_reservoir": 5.56,
+        "waste": 0.42,
+        "wind_onshore": 3.90,
+        "solar": 6.23,
+        "natural_gas": 4.78
+    },
+    "TYNDP_2024_NT_2030": {
+        "hydro_river": 6.12,
+        "biomass": 0.56,
+        "hydro_reservoir": 3.46,
+        "hydro_pumped_reservoir": 5.61,
+        "waste": 0.44,
+        "wind_onshore": 9.0,
+        "solar": 12
+    },
     "TYNDP_2024_NT_2040": {
         "hydro_river": 6.12,
         "biomass": 0.56,
@@ -17,8 +35,6 @@
         "hydro_pumped_reservoir": 5.61,
         "waste": 0.44,
         "wind_onshore": 16.0,
-        "solar": 30,
-        "electrolyser": 6.9,
-        "battery": 0.24
+        "solar": 30
     }
 }

@@ -28,6 +28,7 @@ const {loadTimeSeries} = useModel()
 
 const timeseries = [
   { title: "Actual Generation 2024 (ENTSO-E)", value: 'timeseries_2024'},
+  { title: "Actual Generation 2023 (ENTSO-E)", value: 'timeseries_2023'},
 ]
 
 const selectedTimeSeries = ref('timeseries_2024')

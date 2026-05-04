@@ -48,7 +48,7 @@ function draw() {
       mode: 'lines',
       name: "Reservoir",
       line: {
-        color: colorMap.hydro_reservoir_storage_open,
+        color: colorMap.hydro_reservoir,
         width: 2,
       },
     },
@@ -59,7 +59,7 @@ function draw() {
       mode: 'lines',
       name: "Hydrogen",
       line: {
-        color: colorMap.electrolyser_power,
+        color: colorMap.electrolyzer_power,
         width: 2,
       },
     },

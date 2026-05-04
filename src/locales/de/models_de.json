@@ -15,8 +15,8 @@
       "p1": "Das Modell umfasst drei Arten von Speichern: Reservoir/ Pumpspeicher (nicht explizit modelliert), Batteriespeicher und Wasserstoffspeicher.",
       "reservoir_title": "Reservoir / Pumpspeicher",
       "reservoir_points": [
-        "Pumpspeicherkraftwerke werden nicht explizit modelliert, da viele Anlagen in Österreich über natürliche Zuflüsse verfügen und daher als hybride Speichersysteme betrieben werden. Ihre Erzeugung ist deshalb in den historischen Wasserkraftdaten enthalten und wird nicht separat abgebildet.",
-        "Erzeugung von Reservoir / Pumpspeichern wird dementsprechend als historische Zeitreihe modelliert, die mit dne Leistungen skaliert. Der Füllstand der Speicher ist rein statisch als historische Zeitreihe abgebildet."
+        "Viele Reservoir- und Pumpspeicherkraftwerke in Österreich verfügen über natürliche Zuflüsse und werden daher als hybride Speichersysteme betrieben. Sie werden nicht explizit modelliert; stattdessen wird ihre Nettoerzeugung als historische Zeitreihe abgebildet und mit der installierten Leistung skaliert. Der Pumpstromverbrauch (Energie für das Hochpumpen) wird im Modell vernachlässigt.",
+        "Die Skalierung des Erzeugungsprofils erfolgt auf Basis der historischen Nettoerzeugungsmenge, welche die aus zuvor hochgepumptem Wasser erzeugte Energie ausschließt — d. h. nur die auf natürlichen Zuflüssen basierende Erzeugung geht in die Skalierungsreferenz ein. Der Speicherfüllstand wird rein statisch als historische Zeitreihe abgebildet."
       ],
       "battery_title": "Batteriespeicher",
       "battery_points": [
@@ -26,9 +26,9 @@
 
       "hydrogen_title": "Wasserstoffspeicher",
       "hydrogen_points": [
-        "Überschüssige erneuerbare Energie (nachdem die Batterien vollständig geladen sind) wird in Elektrolyseuren zur Wasserstoffproduktion genutzt.",
+        "Überschüssige erneuerbare Energie (nachdem die Batterien vollständig geladen sind) wird in Elektrolyseuren zur Wasserstoffproduktion genutzt, wobei ein Elektrolyseurwirkungsgrad von 70 % angenommen wird.",
         "Der erzeugte Wasserstoff wird bis zur maximalen Speicherkapazität gespeichert.",
-        "Bei einer Unterdeckung (und leeren Batterien) wird Wasserstoff über Gaskraftwerke wieder in Strom umgewandelt."
+        "Bei einer Unterdeckung (und leeren Batterien) wird Wasserstoff über Gaskraftwerke wieder in Strom umgewandelt, wobei ein Umwandlungswirkungsgrad von 50 % angenommen wird."
       ],
 
       "alert": "Dieses Verhalten der Speicher ist stark vereinfacht und bildet kein reales Marktverhalten ab. In der Praxis wird der Einsatz von Speichern durch Strompreise und Marktoptimierung bestimmt."
@@ -42,10 +42,11 @@
         "Zukünftige Szenarien basierend auf den TYNDP 2024 National Trends"
       ],
 
-      "text": "Diese Szenarien basieren auf nationalen energiepolitischen Zielpfaden und werden im {link1} der europäischen Übertragungsnetzbetreiber verwendet. Die Zeitreihen basieren auf historischen Erzeugungsdaten von {link2}.",
+      "text": "Diese Szenarien basieren auf nationalen energiepolitischen Zielpfaden und werden im {link1} der europäischen Übertragungsnetzbetreiber verwendet. Die Zeitreihen basieren auf historischen Erzeugungsdaten von {link2}, heruntergeladen über {link_energycharts}.",
       "link1": "Ten-Year Network Development Plan (TYNDP)",
       "link2": "ENTSO-E",
       "link3": "E-control",
+      "link_energycharts": "energy-charts.info",
 
       "alert": "Die Solarstromerzeugung ist in den ENTSO-E-Daten nicht vollständig abgebildet, da ein erheblicher Anteil hinter dem Zähler (z. B. Eigenverbrauch) genutzt wird. Dies kann zu einer Unterschätzung der tatsächlichen Solarerzeugung sowie zu einer scheinbar geringeren Last in Zeiten hoher Solarproduktion (Duck-curve) führen."
     },

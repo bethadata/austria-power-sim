@@ -9,6 +9,16 @@
     "waste": 2.24,
     "fossil": 10.23,
     "natural_gas": 7.61
+  },
+  "2023": {
+    "hydro_river": 29.66,
+    "hydro_reservoir": 7.57,
+    "hydro_pumped_reservoir": 3.62,
+    "biomass": 3.17,
+    "solar": 5.19,
+    "wind_onshore": 8.04,
+    "waste": 2.15,
+    "fossil": 10.22,
+    "natural_gas": 7.56
   }
-  
 }
