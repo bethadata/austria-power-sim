@@ -10,6 +10,7 @@ import deCommon from './locales/de/models_de.json'
 
 export const i18n = createI18n({
   legacy: false,
+  globalInjection: true,
   locale: localStorage.getItem('lang') || 'en',
   fallbackLocale: 'en',
   messages: {

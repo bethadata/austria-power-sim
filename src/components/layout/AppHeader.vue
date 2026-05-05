@@ -39,7 +39,7 @@ function toggleDarkMode() {
   localStorage.setItem('darkMode', newTheme)
 }
 
-const { t, locale } = useI18n()
+const { t, locale } = useI18n({ useScope: 'global' })
 
 const toggleLanguage = () => {
   locale.value = locale.value === 'en' ? 'de' : 'en'

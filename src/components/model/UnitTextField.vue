@@ -29,7 +29,7 @@ defineProps<{
   label: string
   unit: string
   tooltip: string
-  modelValue: number | null
+  modelValue: number | null | undefined
 }>()
 
 const emit = defineEmits<{

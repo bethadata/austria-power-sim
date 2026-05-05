@@ -11,11 +11,10 @@ import { onMounted, watch, ref } from 'vue'
 import Plotly from "plotly.js-dist"
 import { useTheme } from 'vuetify'
 import { usePlotly } from '../../composables/usePlotly'
-import type { Data } from 'plotly.js'
 import CardTitleWithTooltip from './CardTitleWithTooltip.vue'
 
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 
 const { colors, colorMap, getLayout, namesMap } = usePlotly()
 
@@ -40,7 +39,7 @@ function drawBarChart() {
 
   const { loadEntries, generation } = props.data
 
-  const traces: Data[] = []
+  const traces: any[] = []
 
   loadEntries.forEach((g, index) => {
     traces.push({

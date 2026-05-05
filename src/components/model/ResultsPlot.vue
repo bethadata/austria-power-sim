@@ -14,7 +14,7 @@ import { usePlotly } from '../../composables/usePlotly'
 import CardTitleWithTooltip from './CardTitleWithTooltip.vue'
 
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 
 const { colors, colorMap, getLayout, generateDateArray, namesMap} = usePlotly()
 
