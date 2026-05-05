@@ -6,6 +6,6 @@ export default defineConfig({
   base: '/austria-power-sim/',
   plugins: [vue(), vuetify()],
   build: {
-    cssMinify: 'esbuild',
+    cssMinify: false,
   },
 })
