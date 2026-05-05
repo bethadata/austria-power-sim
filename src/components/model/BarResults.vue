@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, computed, watch, ref } from 'vue'
+import { onMounted, watch, ref } from 'vue'
 import Plotly from "plotly.js-dist"
 import { useTheme } from 'vuetify'
 import { usePlotly } from '../../composables/usePlotly'
@@ -25,7 +25,7 @@ type BarData = {
   loadEntries: {
     name: string,
     total: number
-  },
+  }[],
   generation: {
     name: string,
     total: number
