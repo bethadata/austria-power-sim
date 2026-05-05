@@ -12,7 +12,7 @@
         <p>{{ t('about_page.about.intro_2') }}</p>
 
         <v-alert type="info" variant="tonal" class="mb-6 mt-6">
-          <i18n-t keypath="about_page.about.github_text">
+          <i18n-t keypath="about_page.about.github_text" scope="global">
             <template #link>
               <a
                 href="https://github.com/bethadata/austria-power-sim"
@@ -26,7 +26,7 @@
         </v-alert>
 
         <v-alert type="success" variant="tonal" class="mb-6 mt-6">
-          <i18n-t keypath="about_page.about.tracker_text">
+          <i18n-t keypath="about_page.about.tracker_text" scope="global">
             <template #link>
               <a
                 href="https://bethadata.github.io/austria-transition-tracker/"
@@ -46,7 +46,7 @@
       <v-card-title>{{ t('about_page.privacy.title') }}</v-card-title>
 
       <v-card-text>
-        <i18n-t keypath="about_page.privacy.text" tag="p">
+        <i18n-t keypath="about_page.privacy.text" tag="p" scope="global">
           <template #link1>
             <a
               href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection"

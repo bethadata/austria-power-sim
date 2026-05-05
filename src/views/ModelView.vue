@@ -10,7 +10,7 @@
         <p>{{ t('models_page.general.p1') }}</p>
         <p>{{ t('models_page.general.p2') }}</p>
 
-        <i18n-t keypath="models_page.general.p3" tag="p">
+        <i18n-t keypath="models_page.general.p3" tag="p" scope="global">
          <template #link>
             <a href="https://www.e-control.at/statistik/e-statistik/archiv/betriebsstatistik/jahresreihen" target="_blank" rel="noopener noreferrer">
               {{ t('models_page.general.link') }}
@@ -69,7 +69,7 @@
       <p>{{ t('models_page.scenarios.text_options') }}</p>
         <ul class="compact-list">
           <li>
-            <i18n-t keypath="models_page.scenarios.options.0" tag="span">
+            <i18n-t keypath="models_page.scenarios.options.0" tag="span" scope="global">
               <template #link3>
                 <a href="https://www.e-control.at/statistik/e-statistik/archiv/bestandsstatistik" target="_blank" rel="noopener noreferrer">
                   {{ t('models_page.scenarios.link3') }}
@@ -80,7 +80,7 @@
           <li>{{ t('models_page.scenarios.options.1') }}</li>
         </ul>
 
-        <i18n-t keypath="models_page.scenarios.text" tag="p">
+        <i18n-t keypath="models_page.scenarios.text" tag="p" scope="global">
           <template #link1>
             <a href="https://2024.entsos-tyndp-scenarios.eu/download/" target="_blank" rel="noopener noreferrer">
               {{ t('models_page.scenarios.link1') }}

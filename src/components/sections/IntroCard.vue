@@ -7,7 +7,7 @@
         </v-card-title>
 
         <v-card-text class="text-body-medium">
-          <i18n-t keypath="intro_card.intro_text" tag="span">
+          <i18n-t keypath="intro_card.intro_text" tag="span" scope="global">
           <template #intro_text_bold>
             <strong> {{ t('intro_card.intro_text_bold') }}  </strong>
           </template>
@@ -17,7 +17,7 @@
           </v-col>
        <v-col>
           <v-alert type="info" variant="tonal" class="my-alert ma-6">
-          <i18n-t keypath="intro_card.info_box_text" tag="span">
+          <i18n-t keypath="intro_card.info_box_text" tag="span" scope="global">
           <template #info_box_link>
             <router-link to="/model" class="text-primary font-weight-medium">
             {{ t('intro_card.info_box_link') }}

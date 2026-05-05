@@ -15,7 +15,7 @@
 
       <strong>{{ t('bottom_info.disclaimer_title') }}</strong>
 
-      <i18n-t keypath="bottom_info.disclaimer" tag="span">
+      <i18n-t keypath="bottom_info.disclaimer" tag="span" scope="global">
         <template #link>
           <router-link to="/model" class="text-primary font-weight-medium">
             {{ t('bottom_info.disclaimer_link') }}
