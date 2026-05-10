@@ -2,7 +2,7 @@
   <v-card class="ps-2 mb-0 elevation-2">
     <v-row>
       <v-col>
-        <v-card-title class="text-h5 font-weight-bold">
+        <v-card-title class="text-h5 font-weight-bold" style="white-space: normal">
           {{ t('intro_card.welcome_text') }}
         </v-card-title>
 
@@ -16,7 +16,7 @@
 
           </v-col>
        <v-col>
-          <v-alert type="info" variant="tonal" class="my-alert ma-6">
+          <v-alert type="info" variant="tonal" class="my-alert ma-6 mt-8 mb-0">
           <i18n-t keypath="intro_card.info_box_text" tag="span" scope="global">
           <template #info_box_link>
             <router-link to="/model" class="text-primary font-weight-medium">
@@ -30,6 +30,16 @@
           </v-alert>
         </v-col>
      
+    </v-row>
+    <v-row class="mt-0 pt-0">
+      <v-alert
+            type="success"
+            variant="tonal"
+            icon="mdi-play-circle-outline"
+            class="my-alert cta-alert ml-3 mr-6 mb-4 mt-0"
+          >
+            <strong>{{ t('intro_card.cta_box_title') }}</strong> {{ t('intro_card.cta_box_text') }}
+          </v-alert>
     </v-row>
   </v-card>
 </template>
@@ -46,6 +56,7 @@
   font-size: 0.9rem;
   line-height: 1.35;
 }
+
 
 
 </style>

@@ -77,15 +77,17 @@
   "bottom_info": {
     "title": "Weitere Informationen",
     "tooltip": "",
-    "info": "Das Modell beinhaltet keine fossile Stromerzeugung, die in Österreich hauptsächlich aus Erdgas besteht. Bei einem nicht vollständig erneuerbaren Energiesystem muss die Residuallast (Last minus erneuerbare Erzeugung) durch fossile Kraftwerke oder Importe gedeckt werden – beides wird derzeit nicht mit-modelliert. Daher lässt sich auch der CO₂-Fußabdruck des Systems nicht direkt berechnen. Die Versorgungslücke oben rechts gibt jedoch eine obere Abschätzung für die benötigte Stromerzeugung aus Erdgas. Multipliziert man diesen Wert mit ca. 0,2, erhält man eine Näherung des CO₂-Fußabdrucks in Mt.",
+    "info": "Das Modell beinhaltet keine fossile Stromerzeugung, die in Österreich hauptsächlich aus Erdgas besteht. Bei einem nicht vollständig erneuerbaren Energiesystem muss die Residuallast bzw. die Versorgungslücke (Last minus erneuerbare Erzeugung) durch fossile Kraftwerke oder Importe gedeckt werden – beides wird derzeit nicht mit-modelliert. Daher lässt sich auch der CO₂-Fußabdruck des Systems nicht direkt berechnen. Die Versorgungslücke oben rechts gibt jedoch eine obere Abschätzung für die benötigte Stromerzeugung aus Erdgas. Multipliziert man diesen Wert mit ca. 0,2, erhält man eine Näherung des CO₂-Fußabdrucks in Mt.",
     "disclaimer": "Das Modell ist stark vereinfacht zur Veranschaulichung systemischer Größenordnungen. Es bildet das reale Systemverhalten nicht vollständig ab, da mehrere Faktoren nicht berücksichtigt werden. Beispielsweise sind Solarzeitreihen auf Basis historischer ENTSO-E-Daten nur unzureichend dargestellt. Weitere Details sind im Abschnitt „Limitierungen“ auf der {link} zu finden.",
     "disclaimer_link": "Modell & Daten Seite",
     "disclaimer_title": "Hinweis: "
   },
   "intro_card": {
     "welcome_text": "Willkommen beim Austria Power Simulator",
-    "intro_text": "Das Dashboard erlaubt die Untersuchung möglicher zukünftiger Entwicklungen des österreichischen Stromsystems, indem stündliche Stromerzeugung und -verbrauch simuliert werden. Eigene Szenarien können erstellt werden, indem {intro_text_bold} (Batterien, Wasserstoff) parametrisiert werden.",
+    "intro_text": "Das Dashboard ermöglicht die Untersuchung möglicher zukünftiger Entwicklungen des österreichischen Stromsystems, indem stündliche Stromerzeugung und -verbrauch simuliert werden. Über die Einstellungen können eigene Szenarien erstellt werden, indem {intro_text_bold} (Batterien, Wasserstoff) parametrisiert werden.",
     "intro_text_bold": "Gesamtlast, installierte erneuerbare Energien und Energiespeicher",
+    "cta_box_title": "Try it out:",
+    "cta_box_text": "Ändere die Leistungswerte unten oder wechsle das Szenario, um mögliche zukünftige Entwicklungen des österreichischen Stromsystems zu erkunden.",
     "info_box_text": "Mehr Infos zur Methodik, Daten, Annahmen und {info_box_strong} auf der {info_box_link}",
     "info_box_strong": "wichtige Einschränkungen",
     "info_box_link": "Modell & Daten Seite"

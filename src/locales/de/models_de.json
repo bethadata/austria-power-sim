@@ -4,7 +4,7 @@
       "title": "Allgemeines Modell",
       "p1": "Das Modell basiert auf einer vereinfachten stündlichen Simulation von Stromangebot und -nachfrage. Stündliche Erzeugungszeitreihen aus erneuerbaren Energiequellen (z. B. Solar und Wind) werden mit einem stündlichen Lastprofil kombiniert.",
       "p2": "Für jede Stunde des Jahres wird die Erzeugung aus folgenden Quellen aggregiert: Solar / PV, Onshore-Wind, Laufwasserkraft, Speicherkraft, Abfall / Biomasse.",
-      "p3": "Alle Erzeugungsprofile basieren auf historischen Zeitreihendaten (siehe Abschnitt „Datenquellen“ unten). Sämtliche Zeitreihen werden auf die im gewählten Szenario definierte installierte Leistung normiert, sowie auf die historische Erzeugungsmenge skaliert (basierend auf {link} Daten. Wenn die installierte Leistung (z. B. Solar-PV) angepasst wird, werden die entsprechenden Erzeugungsprofile proportional skaliert.",
+      "p3": "Alle Erzeugungsprofile basieren auf historischen Zeitreihendaten (siehe Abschnitt „Datenquellen“ unten). Sämtliche Zeitreihen werden auf die im gewählten Szenario definierte installierte Leistung normiert, sowie auf die historische Erzeugungsmenge skaliert (basierend auf {link} Daten). Wenn die installierte Leistung (z. B. Solar-PV) angepasst wird, werden die entsprechenden Erzeugungsprofile proportional skaliert.",
       "alert": "Hinweis: Biomasse und Waste werden derzeit ähnlich wie fluktuierende erneuerbare Energien mit festen historischen Profilen modelliert, die über das Jahr hinweg weitgehend konstant sind. In der Praxis könnte Biomasse jedoch deutlich flexibler eingesetzt werden, was im Modell derzeit noch nicht berücksichtigt ist.",
       "link": "E-control",
       "p4": "Zusätzlich zu den Erzeugungskapazitäten können Nutzer Energiespeicher (Batterien und Wasserstoffspeicher) sowie die Gesamtlast parametrisieren, die wiederum auf Basis der historischen Lastkurve skaliert wird."
@@ -15,7 +15,7 @@
       "p1": "Das Modell umfasst drei Arten von Speichern: Reservoir/ Pumpspeicher (nicht explizit modelliert), Batteriespeicher und Wasserstoffspeicher.",
       "reservoir_title": "Reservoir / Pumpspeicher",
       "reservoir_points": [
-        "Viele Reservoir- und Pumpspeicherkraftwerke in Österreich verfügen über natürliche Zuflüsse und werden daher als hybride Speichersysteme betrieben. Sie werden nicht explizit modelliert; stattdessen wird ihre Nettoerzeugung als historische Zeitreihe abgebildet und mit der installierten Leistung skaliert. Der Pumpstromverbrauch (Energie für das Hochpumpen) wird im Modell vernachlässigt.",
+        "Viele Reservoir- und Pumpspeicherkraftwerke in Österreich verfügen über natürliche Zuflüsse und werden daher als hybride Speichersysteme betrieben. Sie werden nicht explizit modelliert; stattdessen wird ihre Nettoerzeugung als historische Zeitreihe abgebildet und mit der installierten Leistung skaliert. Der Pumpstromverbrauch (Energie für das Hochpumpen) wird ebenso nicht berücksichtigt.",
         "Die Skalierung des Erzeugungsprofils erfolgt auf Basis der historischen Nettoerzeugungsmenge, welche die aus zuvor hochgepumptem Wasser erzeugte Energie ausschließt — d. h. nur die auf natürlichen Zuflüssen basierende Erzeugung geht in die Skalierungsreferenz ein. Der Speicherfüllstand wird rein statisch als historische Zeitreihe abgebildet."
       ],
       "battery_title": "Batteriespeicher",
@@ -42,7 +42,7 @@
         "Zukünftige Szenarien basierend auf den TYNDP 2024 National Trends"
       ],
 
-      "text": "Diese Szenarien basieren auf nationalen energiepolitischen Zielpfaden und werden im {link1} der europäischen Übertragungsnetzbetreiber verwendet. Die Zeitreihen basieren auf historischen Erzeugungsdaten von {link2}, heruntergeladen über {link_energycharts}.",
+      "text": "Die TYNDP-National Trends Szenarien basieren auf nationalen energiepolitischen Zielpfaden und werden im {link1} der europäischen Übertragungsnetzbetreiber verwendet. Die Zeitreihen basieren auf historischen Erzeugungsdaten von {link2}, heruntergeladen über {link_energycharts}.",
       "link1": "Ten-Year Network Development Plan (TYNDP)",
       "link2": "ENTSO-E",
       "link3": "E-control",
@@ -53,7 +53,7 @@
 
     "limitations": {
       "title": "Einschränkungen",
-      "intro": "Dieses Modell ist stark vereinfacht. Für detailliertere Analysen wird auf Studien wie den TYNDP verwiesen, die das europäische Stromsystem deutlich umfassender modellieren.",
+      "intro": "Das Modell ist stark vereinfacht. Für detailliertere Analysen wird auf Studien wie den TYNDP verwiesen, die das europäische Stromsystem deutlich umfassender modellieren.",
       "subtitle": "Wesentliche Vereinfachungen sind unter anderem:",
       "items": [
         "Kein grenzüberschreitender Austausch: Österreich wird als isoliertes System ohne Importe und Exporte modelliert.",
