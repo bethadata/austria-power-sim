@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex align-center ga-2">
-    <span :class="['title-text', titleClass]">      
-        {{ title }}
+    <span :class="titleClass">
+      {{ title }}
     </span>
 
     <v-tooltip
@@ -38,8 +38,10 @@ defineProps({
     required: true,
   },
   titleClass: {
+    // Vuetify 4's Material 3 scale. title-large is what v-card-title itself uses,
+    // so these hand-built titles sit at the same size as Vuetify's own.
     type: String,
-    default: "text-h2",
+    default: "text-title-large",
   },
   showDivider: {
     type: Boolean,
@@ -49,11 +51,6 @@ defineProps({
 </script>
 
 <style scoped>
-
-.title-text {
-  line-height: 1.5;
-  font-size: 20px;
-}
 
 .help-icon {
   opacity: 0.7;

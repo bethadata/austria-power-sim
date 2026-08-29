@@ -149,7 +149,7 @@ watch(
 )
 
 watch(
-  () => theme.global.name.value,
+  () => theme.name.value,
   () => {
     draw()
     if (dialog.value) drawIn(plotFullscreen.value)

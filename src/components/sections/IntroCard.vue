@@ -2,7 +2,7 @@
   <v-card class="ps-2 mb-0 elevation-2">
     <v-row class="mb-0 pb-0">
       <v-col class="pb-0">
-          <v-card-title class="text-h5 font-weight-bold" style="white-space: normal">
+          <v-card-title class="text-headline-small font-weight-bold" style="white-space: normal">
           {{ t('intro_card.welcome_text') }}
         </v-card-title>
       </v-col>

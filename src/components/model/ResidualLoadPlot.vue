@@ -73,7 +73,7 @@ watch(
 )
 
 watch(
-  () => theme.global.name.value,
+  () => theme.name.value,
   draw
 )
 

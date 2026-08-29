@@ -91,5 +91,10 @@
     "info_box_text": "Learn more about the methodology, data, assumptions, and {info_box_strong} on the {info_box_link}",
     "info_box_strong": "important limitations",
     "info_box_link": "Models & Data page"
+  },
+  "footer": {
+    "last_updated": "Last updated {date}",
+    "github": "Source code on GitHub",
+    "bluesky": "Bluesky profile"
   }
 }

@@ -4,7 +4,7 @@ import { useTheme } from 'vuetify'
 export function usePlotly() {
   const theme = useTheme()
 
-  const isDark = computed(() => theme.global.current.value.dark)
+  const isDark = computed(() => theme.current.value.dark)
 
   // 🎨 shared colors
   const colors = [

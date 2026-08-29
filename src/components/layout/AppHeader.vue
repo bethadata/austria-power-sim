@@ -29,7 +29,7 @@ import { useTheme } from 'vuetify'
 import { useI18n } from 'vue-i18n'
 
 const theme = useTheme()
-const isDarkMode = computed(() => theme.global.current.value.dark)
+const isDarkMode = computed(() => theme.current.value.dark)
 
 function toggleDarkMode() {
   const newTheme = isDarkMode.value ? 'light' : 'dark'

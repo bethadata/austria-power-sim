@@ -91,5 +91,10 @@
     "info_box_text": "Mehr Infos zur Methodik, Daten, Annahmen und {info_box_strong} auf der {info_box_link}",
     "info_box_strong": "wichtige Einschränkungen",
     "info_box_link": "Modell & Daten Seite"
+  },
+  "footer": {
+    "last_updated": "Zuletzt aktualisiert {date}",
+    "github": "Quellcode auf GitHub",
+    "bluesky": "Bluesky-Profil"
   }
 }
