@@ -150,7 +150,7 @@ Full documentation is on the **Model & Data** page of the running application.
 
 Two sibling dashboards, same stack and same conventions:
 
-- [Austria Transition Tracker](https://bethadata.github.io/austria-transition-tracker-v2/) — energy transition and emissions
+- [Austria Transition Tracker](https://bethadata.github.io/austria-transition-tracker/) — energy transition and emissions
 - [Austria Population Tracker](https://bethadata.github.io/austria-population-tracker/) — population by region, 2002 to today
 
 ---
