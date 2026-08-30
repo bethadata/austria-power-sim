@@ -1,3 +1,5 @@
+import { fileURLToPath, URL } from 'node:url'
+
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vuetify from 'vite-plugin-vuetify'
@@ -10,6 +12,11 @@ const BUILD_DATE = new Date().toISOString().slice(0, 10)
 export default defineConfig({
   base: '/austria-power-sim/',
   plugins: [vue(), vuetify()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
   define: {
     __BUILD_DATE__: JSON.stringify(BUILD_DATE),
   },

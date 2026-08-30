@@ -1,15 +1,13 @@
 {
   "about_page": {
     "about": {
-      "title": "About",
-      "intro_1": "This site is a purely private project, emerged from the personal motivation of trying out some future scenarios and seeing how the Austrian power system can become climate neutral by using renewable energies in combination with energy storage.",
-      "intro_2": "Due to the complexity and intermittent nature of particularly wind and solar energy, such scenarios have to be simulated ideally with high time resolutions such as hourly or lower. This way, diurnal patterns (daytime solar) and also seasonal effects can be correctly captured.",
+      "title": "About this project",
+      "intro_1": "This site is a purely private project, emerged from the personal motivation of trying out some future scenarios and seeing how the Austrian power system can become climate neutral by using renewable energies in combination with energy storage. Due to the complexity and intermittent nature of particularly wind and solar energy, such scenarios have to be simulated ideally with high time resolutions such as hourly or lower. This way, diurnal patterns (daytime solar) and also seasonal effects can be correctly captured.",
 
-      "github_text": "The complete code of the site is available at the {link}. Any feedback, constructive criticism, or direct contributions are very welcome and greatly appreciated!",
-      "github_link": "respective GitHub repository",
-
-      "tracker_text": "Check out also my {link}, where I collect many datasets related to the sustainable transition of Austria and try to project yearly greenhouse gas emissions based on latest energy consumption statistics.",
-      "tracker_link": "Austria-Transition-Tracker page"
+      "links_text": "The complete code of this site is available in the {repo}; feedback, constructive criticism, or direct contributions are very welcome. Have a look at my other projects as well, such as the {transition} or the {population}.",
+      "repo_link": "GitHub repository",
+      "transition_link": "Austria Transition Tracker",
+      "population_link": "Austria Population Tracker"
     },
 
     "privacy": {
@@ -21,9 +19,8 @@
 
     "disclaimer": {
       "title": "Disclaimer",
-      "text_1": "The information contained in this website is for general information purposes only.",
-      "text_2": "Efforts are undertaken to keep the information up to date and correct, however no representations or warranties of any kind are expressed or implied about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, data, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.",
-      "text_3": "Through this website you are able to link to other websites. There is no control over the nature, content and availability of those sites."
+      "text_1": "The information contained in this website is for general information purposes only. Efforts are undertaken to keep the information up to date and correct, however no representations or warranties of any kind are expressed or implied about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, data, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.",
+      "text_2": "Through this website you are able to link to other websites. There is no control over the nature, content and availability of those sites."
     },
 
     "ai": {

@@ -1,12 +1,9 @@
-import { createApp } from 'vue';
-import vuetify from './plugins/vuetify.ts';
-import App from './App.vue'
-import router from './router'
-import { i18n } from './i18n'
-import 'flag-icons/css/flag-icons.min.css'
+import { createApp } from 'vue'
 
-const app = createApp(App);
-app.use(vuetify);
-app.use(i18n);
-app.use(router);
-app.mount('#app')
+import App from '@/App.vue'
+import { i18n } from '@/i18n'
+import vuetify from '@/plugins/vuetify'
+import router from '@/router'
+import '@/styles/app.css'
+
+createApp(App).use(vuetify).use(i18n).use(router).mount('#app')

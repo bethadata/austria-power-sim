@@ -92,7 +92,7 @@ async function loadLoadData() {
 
   const loader = loadModules['../data/loads.json']
 
-  if (!loader) throw new Error('Powers file not found')
+  if (!loader) throw new Error('Loads file not found')
 
   const module = await loader()
   loadData.value = module.default

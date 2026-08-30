@@ -1,0 +1,86 @@
+/*
+ * Declared first, and deliberately: everything below that could collide with a
+ * Vuetify utility goes into this layer. Vuetify 4 ships its helpers inside
+ * cascade layers, and unlayered author CSS outranks every layered rule no
+ * matter how specific it is -- so an unlayered `h1 { margin: 0 }` here would
+ * silently defeat `mb-2` on every heading in the app.
+ */
+@layer app-reset;
+
+/*
+ * Global type scale.
+ *
+ * Vuetify sizes its typography in rem, so lowering the root size steps every
+ * label, field and tooltip down together instead of scattering overrides across
+ * components. The charts are the page; the chrome around them should be
+ * readable, not competitive.
+ *
+ * Spacing utilities are px-based and therefore unaffected.
+ */
+html {
+  font-size: 15px;
+}
+
+/* Phones already render at a smaller physical size; another step down there
+   would push labels under a comfortable reading size. */
+@media (max-width: 600px) {
+  html {
+    font-size: 15.5px;
+  }
+}
+
+/*
+ * Headings carry the document outline, not appearance. Size and weight come
+ * from the Vuetify type classes already on the element, so h1-h6 are free to
+ * mark structure wherever the outline needs it without moving anything.
+ */
+@layer app-reset {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+}
+
+/*
+ * Prose lists on the Model & Data and About pages.
+ *
+ * This lived in a `src/style.css` that nothing ever imported, so every list on
+ * those pages rendered with the browser default spacing rather than this one.
+ * Imported from main.ts now.
+ */
+.compact-list {
+  padding-left: 1.5rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.compact-list li {
+  margin-bottom: 0.35rem;
+}
+
+/* Prose blocks in the content pages: paragraphs need the rhythm the reset above
+   removes, but only where they are actually prose. */
+.prose p {
+  margin-bottom: 0.85rem;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/*
+ * Card headings on the two content pages wrap.
+ *
+ * `.v-card-title` is single-line by design -- nowrap plus an ellipsis -- which
+ * is fine for a chart card and wrong for a heading in a third-width column:
+ * "Hinweis zu KI-Unterstuetzung" rendered as "Hinweis zu KI-Unt...". Scoped to
+ * those pages rather than applied globally, so card titles elsewhere keep the
+ * single-line behaviour their layouts assume.
+ */
+.about-page .v-card-title,
+.model-page .v-card-title {
+  white-space: normal;
+}

@@ -4,6 +4,12 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "types": ["vite/client"],
 
+    /* `@/` aliases `src/`, matching the other two dashboards. Kept in step with
+       the `resolve.alias` entry in vite.config.ts -- TypeScript resolves through
+       this block, Vite through that one, and they have to agree. */
+    "baseUrl": ".",
+    "paths": { "@/*": ["./src/*"] },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

@@ -1,14 +1,28 @@
 {
+  "app": {
+    "title": "Austria Power Simulator"
+  },
   "header": {
     "home": "Home",
     "model": "Model & Data",
-    "about": "About",
-    "dark": "Dark Mode",
-    "light": "Light Mode"
+    "about": "About"
+  },
+  "nav": {
+    "menu": "Menu",
+    "language": "Language",
+    "theme": "Toggle dark mode"
+  },
+  "units": {
+    "power_gw": "Power (GW)",
+    "energy_gwh": "Energy (GWh)",
+    "energy_twh": "Energy (TWh)",
+    "hours": "Hours per year"
   },
   "bar_results": {
     "title": "Energy balance",
-    "tooltip": "Summed up generation and load data."
+    "tooltip": "Summed up generation and load data.",
+    "category_load": "Load",
+    "category_generation": "Generation"
   },
   "loaddata_form": {
     "title": "Scenario and load",
@@ -19,40 +33,39 @@
   },
   "residualload_plot": {
     "title": "Residual load duration curve",
-    "tooltip": "Shows how many hours a certain load gap exists. Positive means renewables don't meet demand, negative indicates a surplus."
-  }, 
+    "tooltip": "Shows how many hours a certain load gap exists. Positive means renewables don't meet demand, negative indicates a surplus.",
+    "series_base": "Residual load",
+    "series_storage": "Residual load incl. battery + H₂"
+  },
   "results_plot": {
     "title": "Load and generation",
     "tooltip": "Shows the hourly load and generation profiles of technologies. Normalized timeseries are scaled to the power-values set under System data."
   },
   "storages_plot": {
     "title": "Storage charges",
-    "tooltip": "Storage energy contents over simulation period."
+    "tooltip": "Storage energy contents over simulation period.",
+    "series_battery": "Battery",
+    "series_reservoir": "Reservoir",
+    "series_hydrogen": "Hydrogen"
   },
   "system_data_form": {
     "title": "System data",
     "tooltip": "Values are updated based on chosen scenario, but feel free to build your own scenario!",
     "solar_power_label": "Solar power",
     "solar_power_tooltip": "Installed solar power",
-
     "wind_onshore_power_label": "Wind onshore power",
     "wind_onshore_power_tooltip": "Installed (onshore) wind power",
-
     "hydro_river_power_label": "Hydro river power",
     "hydro_river_power_tooltip": "Installed hydro river power",
-
     "hydro_reservoir_power_label": "Hydro reservoir storage power",
     "hydro_reservoir_power_tooltip": "Installed hydro reservoir storage power",
-
     "hydro_pumped_reservoir_power_label": "Hydro pumped storage power",
     "hydro_pumped_reservoir_power_tooltip": "Installed pumped hydro storage power",
-
     "enable_batteries": "Enable batteries",
     "battery_capacity_label": "Battery capacity",
     "battery_capacity_tooltip": "Total battery capacity.",
     "battery_power_label": "Battery power",
     "battery_power_tooltip": "Total battery power.",
-
     "enable_hydrogen": "Enable hydrogen",
     "hydrogen_storage_label": "Hydrogen storage",
     "hydrogen_storage_tooltip": "Total hydrogen storage in system.",
@@ -67,7 +80,8 @@
     "overshoot_energy": "Overshoot energy",
     "overshoot_energy_tooltip": "Excess generation after covering all loads (incl. storage & hydrogen)",
     "load_gap": "Load Gap",
-    "load_gap_tooltip": "Unserved load after all generation (incl. storage & gas)"
+    "load_gap_tooltip": "Unserved load after all generation (incl. storage & gas)",
+    "section": "System results"
   },
   "timeseries_form": {
     "title": "Timeseries",
@@ -76,8 +90,7 @@
   },
   "bottom_info": {
     "title": "More Information",
-    "tooltip": "",
-    "info": "The model does not include any fossil-fuelled generation, which in Austria is mainly natural gas. For a non-100% renewable energy system, the residual load or the load gap (load minus renewable generation) must be covered by either fossil-fuelled power generation or imports — neither of which is part of this model. Therefore, the emission footprint of the system cannot be calculated directly. However, the Load Gap parameter gives an upper bound for the required natural gas-based power production. Multiplying it by approximately 0.2 yields an estimate of the CO₂ footprint in Mt.",
+    "info": "The model does not include any fossil-fuelled generation, which in Austria is mainly natural gas. For a non-100% renewable energy system, the residual load or the load gap (load minus renewable generation) must be covered by either fossil-fuelled power generation or imports — neither of which is part of this model. Therefore, the emission footprint of the system cannot be calculated directly. However, the load gap reported above gives an upper bound for the required natural gas-based power production. Multiplying it by approximately 0.2 yields an estimate of the CO₂ footprint in Mt.",
     "disclaimer": "This is a highly simplified model to understand system scales. It does not represent real-world system behavior, as several factors are neglected. For example, solar generation timeseries are not very well represented with historic data from ENTSO-E. Check the corresponding section on Limitations on the {link}.",
     "disclaimer_link": "Models & Data page",
     "disclaimer_title": "Disclaimer: "
@@ -86,9 +99,7 @@
     "welcome_text": "Welcome to the Austria-Power-Simulator",
     "intro_text": "Explore possible future pathways of the Austrian power system by simulating hourly electricity production and consumption. You can try out your own system scenarios by parametrizing {intro_text_bold} (batteries, hydrogen).",
     "intro_text_bold": "total load, installed renewable energies, and energy storage",
-    "cta_box_title": "Try it out:",
-    "cta_box_text": "Adjust the power values below or switch scenarios to explore possible future pathways of the Austrian power system.",
-    "info_box_text": "Learn more about the methodology, data, assumptions, and {info_box_strong} on the {info_box_link}",
+    "info_box_text": "Learn more about the methodology, data, assumptions, and {info_box_strong} on the {info_box_link}.",
     "info_box_strong": "important limitations",
     "info_box_link": "Models & Data page"
   },

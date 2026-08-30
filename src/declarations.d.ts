@@ -1,5 +1,6 @@
-declare module 'plotly.js-dist'
-declare module 'plotly.js'
+// The basic bundle, not the full one: this app draws scatter and bar only, and
+// the full build was ~4.7 MB of the entry chunk. Neither ships types.
+declare module 'plotly.js-basic-dist-min'
 declare module '*.vue'
 
 // `vuetify/styles` resolves through the package's exports map to a plain .css

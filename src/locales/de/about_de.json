@@ -2,14 +2,12 @@
   "about_page": {
     "about": {
       "title": "Über dieses Projekt",
-      "intro_1": "Diese Seite ist ein rein privates Projekt und entstand aus der persönlichen Motivation heraus, mögliche Zukunftsszenarien zu untersuchen und zu verstehen, wie das österreichische Energiesystem durch den Einsatz erneuerbarer Energien in Kombination mit Energiespeichern klimaneutral werden kann.",
-      "intro_2": "Aufgrund der schwankenden Erzeugung insbesondere von Wind- und Solarenergie müssen solche Szenarien idealerweise mit hoher zeitlicher Auflösung, etwa stündlich, simuliert werden. Nur so lassen sich sowohl tageszeitliche Muster (z. B. Solarerzeugung am Tag) als auch saisonale Effekte realistisch abbilden.",
+      "intro_1": "Diese Seite ist ein rein privates Projekt und entstand aus der persönlichen Motivation heraus, mögliche Zukunftsszenarien zu untersuchen und zu verstehen, wie das österreichische Energiesystem durch den Einsatz erneuerbarer Energien in Kombination mit Energiespeichern klimaneutral werden kann. Aufgrund der schwankenden Erzeugung insbesondere von Wind- und Solarenergie müssen solche Szenarien idealerweise mit hoher zeitlicher Auflösung, etwa stündlich, simuliert werden. Nur so lassen sich sowohl tageszeitliche Muster (z. B. Solarerzeugung am Tag) als auch saisonale Effekte realistisch abbilden.",
 
-      "github_text": "Der vollständige Code dieser Seite ist im {link} verfügbar. Feedback, konstruktive Kritik oder direkte Beiträge sind jederzeit willkommen und werden sehr geschätzt!",
-      "github_link": "entsprechenden GitHub-Repository",
-
-      "tracker_text": "Bei Interesse kann auch gerne meine {link} besucht werden, auf der ich zahlreiche Datensätze zur nachhaltigen Transformation Österreichs sammle und versuche, die jährlichen Treibhausgasemissionen auf Basis aktueller Energieverbrauchsdaten zu prognostizieren.",
-      "tracker_link": "Austria-Transition-Tracker-Seite"
+      "links_text": "Der vollständige Code dieser Seite ist im {repo} verfügbar; Feedback, konstruktive Kritik oder direkte Beiträge sind jederzeit willkommen. Schau dir auch meine anderen Projekte an, etwa den {transition} oder den {population}.",
+      "repo_link": "GitHub-Repository",
+      "transition_link": "Austria Transition Tracker",
+      "population_link": "Austria Population Tracker"
     },
 
     "privacy": {
@@ -21,9 +19,8 @@
 
     "disclaimer": {
       "title": "Haftungsausschluss",
-      "text_1": "Die Inhalte dieser Website dienen ausschließlich allgemeinen Informationszwecken.",
-      "text_2": "Es wird zwar angestrebt, die bereitgestellten Informationen aktuell und korrekt zu halten, jedoch wird keinerlei Gewähr für die Vollständigkeit, Richtigkeit, Zuverlässigkeit, Eignung oder Verfügbarkeit der Website oder der enthaltenen Informationen, Daten oder zugehörigen Grafiken für irgendeinen Zweck übernommen. Jegliches Vertrauen in diese Informationen erfolgt daher auf eigene Verantwortung.",
-      "text_3": "Über diese Website können Links zu externen Websites aufgerufen werden. Auf deren Inhalte und Verfügbarkeit besteht keinerlei Einfluss."
+      "text_1": "Die Inhalte dieser Website dienen ausschließlich allgemeinen Informationszwecken. Es wird zwar angestrebt, die bereitgestellten Informationen aktuell und korrekt zu halten, jedoch wird keinerlei Gewähr für die Vollständigkeit, Richtigkeit, Zuverlässigkeit, Eignung oder Verfügbarkeit der Website oder der enthaltenen Informationen, Daten oder zugehörigen Grafiken für irgendeinen Zweck übernommen. Jegliches Vertrauen in diese Informationen erfolgt daher auf eigene Verantwortung.",
+      "text_2": "Über diese Website können Links zu externen Websites aufgerufen werden. Auf deren Inhalte und Verfügbarkeit besteht keinerlei Einfluss."
     },
 
     "ai": {

@@ -1,28 +1,17 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
-import ModelView from '../views/ModelView.vue'
+import AboutView from '@/views/AboutView.vue'
+import HomeView from '@/views/HomeView.vue'
+import ModelView from '@/views/ModelView.vue'
 
-const router = createRouter({
+// Hash mode: GitHub Pages has no rewrite rules, so a deep path would 404 on
+// reload. vite.config.ts sets `base` for the asset paths.
+export default createRouter({
   history: createWebHashHistory(),
+  scrollBehavior: () => ({ top: 0 }),
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView,
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: AboutView,
-    },
-    {
-      path: '/model',
-      name: 'model',
-      component: ModelView,
-    },
+    { path: '/', name: 'home', component: HomeView },
+    { path: '/model', name: 'model', component: ModelView },
+    { path: '/about', name: 'about', component: AboutView },
   ],
 })
-
-export default router

@@ -1,14 +1,28 @@
 {
+  "app": {
+    "title": "Austria Power Simulator"
+  },
   "header": {
     "home": "Home",
     "model": "Modell & Daten",
-    "about": "About",
-    "dark": "Dark Mode",
-    "light": "Light Mode"
+    "about": "About"
+  },
+  "nav": {
+    "menu": "Menü",
+    "language": "Sprache",
+    "theme": "Dark Mode umschalten"
+  },
+  "units": {
+    "power_gw": "Leistung (GW)",
+    "energy_gwh": "Energie (GWh)",
+    "energy_twh": "Energie (TWh)",
+    "hours": "Stunden pro Jahr"
   },
   "bar_results": {
     "title": "Energiebilanz",
-    "tooltip": "Aggregierte Erzeugungs- und Lastdaten."
+    "tooltip": "Aggregierte Erzeugungs- und Lastdaten.",
+    "category_load": "Last",
+    "category_generation": "Erzeugung"
   },
   "loaddata_form": {
     "title": "Szenario und Last",
@@ -19,7 +33,9 @@
   },
   "residualload_plot": {
     "title": "Residuallast-Dauerlinie",
-    "tooltip": "Zeigt, wie viele Stunden eine bestimmte Lastlücke besteht. Positive Werte bedeuten, dass erneuerbare Energien die Nachfrage nicht decken, negative Werte zeigen einen Überschuss."
+    "tooltip": "Zeigt, wie viele Stunden eine bestimmte Lastlücke besteht. Positive Werte bedeuten, dass erneuerbare Energien die Nachfrage nicht decken, negative Werte zeigen einen Überschuss.",
+    "series_base": "Residuallast",
+    "series_storage": "Residuallast inkl. Batterie + H₂"
   },
   "results_plot": {
     "title": "Last und Erzeugung",
@@ -27,32 +43,29 @@
   },
   "storages_plot": {
     "title": "Speicherfüllstände",
-    "tooltip": "Energieinhalte der Speicher über den Simulationszeitraum."
+    "tooltip": "Energieinhalte der Speicher über den Simulationszeitraum.",
+    "series_battery": "Batterie",
+    "series_reservoir": "Speicherkraftwerk",
+    "series_hydrogen": "Wasserstoff"
   },
   "system_data_form": {
     "title": "Systemdaten",
     "tooltip": "Werte werden basierend auf dem gewählten Szenario gesetzt – eigene Szenarien sind frei definierbar.",
     "solar_power_label": "Solar/PV-Leistung",
     "solar_power_tooltip": "Installierte Solarleistung",
-
     "wind_onshore_power_label": "Wind Onshore Leistung",
     "wind_onshore_power_tooltip": "Installierte Onshore-Windleistung",
-
     "hydro_river_power_label": "Laufwasserkraft",
     "hydro_river_power_tooltip": "Installierte Laufwasserkraft",
-
     "hydro_reservoir_power_label": "Speicherkraftwerk",
     "hydro_reservoir_power_tooltip": "Installierte Leistung von Speicherkraftwerken",
-
     "hydro_pumped_reservoir_power_label": "Pumpspeicher",
     "hydro_pumped_reservoir_power_tooltip": "Installierte Leistung von Pumpspeicherkraftwerken",
-
     "enable_batteries": "Batterien aktivieren",
     "battery_capacity_label": "Batteriekapazität",
     "battery_capacity_tooltip": "Gesamte Speicherkapazität der Batterien.",
     "battery_power_label": "Batterieleistung",
     "battery_power_tooltip": "Gesamte Lade-/Entladeleistung der Batterien.",
-
     "enable_hydrogen": "Wasserstoff aktivieren",
     "hydrogen_storage_label": "Wasserstoffspeicher",
     "hydrogen_storage_tooltip": "Gesamte Wasserstoffspeicherkapazität im System.",
@@ -67,7 +80,8 @@
     "overshoot_energy": "Überschussenergie",
     "overshoot_energy_tooltip": "Erzeugungsüberschuss nach Deckung aller Lasten (inkl. Speicher & Wasserstoff)",
     "load_gap": "Versorgungslücke",
-    "load_gap_tooltip": "Nicht gedeckte Last nach Nutzung aller Erzeugungsquellen (inkl. Speicher & Gas)"
+    "load_gap_tooltip": "Nicht gedeckte Last nach Nutzung aller Erzeugungsquellen (inkl. Speicher & Gas)",
+    "section": "Systemergebnisse"
   },
   "timeseries_form": {
     "title": "Zeitreihen",
@@ -76,8 +90,7 @@
   },
   "bottom_info": {
     "title": "Weitere Informationen",
-    "tooltip": "",
-    "info": "Das Modell beinhaltet keine fossile Stromerzeugung, die in Österreich hauptsächlich aus Erdgas besteht. Bei einem nicht vollständig erneuerbaren Energiesystem muss die Residuallast bzw. die Versorgungslücke (Last minus erneuerbare Erzeugung) durch fossile Kraftwerke oder Importe gedeckt werden – beides wird derzeit nicht mit-modelliert. Daher lässt sich auch der CO₂-Fußabdruck des Systems nicht direkt berechnen. Die Versorgungslücke oben rechts gibt jedoch eine obere Abschätzung für die benötigte Stromerzeugung aus Erdgas. Multipliziert man diesen Wert mit ca. 0,2, erhält man eine Näherung des CO₂-Fußabdrucks in Mt.",
+    "info": "Das Modell beinhaltet keine fossile Stromerzeugung, die in Österreich hauptsächlich aus Erdgas besteht. Bei einem nicht vollständig erneuerbaren Energiesystem muss die Residuallast bzw. die Versorgungslücke (Last minus erneuerbare Erzeugung) durch fossile Kraftwerke oder Importe gedeckt werden – beides wird derzeit nicht mit-modelliert. Daher lässt sich auch der CO₂-Fußabdruck des Systems nicht direkt berechnen. Die oben ausgewiesene Versorgungslücke gibt jedoch eine obere Abschätzung für die benötigte Stromerzeugung aus Erdgas. Multipliziert man diesen Wert mit ca. 0,2, erhält man eine Näherung des CO₂-Fußabdrucks in Mt.",
     "disclaimer": "Das Modell ist stark vereinfacht zur Veranschaulichung systemischer Größenordnungen. Es bildet das reale Systemverhalten nicht vollständig ab, da mehrere Faktoren nicht berücksichtigt werden. Beispielsweise sind Solarzeitreihen auf Basis historischer ENTSO-E-Daten nur unzureichend dargestellt. Weitere Details sind im Abschnitt „Limitierungen“ auf der {link} zu finden.",
     "disclaimer_link": "Modell & Daten Seite",
     "disclaimer_title": "Hinweis: "
@@ -86,9 +99,7 @@
     "welcome_text": "Willkommen beim Austria Power Simulator",
     "intro_text": "Das Dashboard ermöglicht die Untersuchung möglicher zukünftiger Entwicklungen des österreichischen Stromsystems, indem stündliche Stromerzeugung und -verbrauch simuliert werden. Über die Einstellungen können eigene Szenarien erstellt werden, indem {intro_text_bold} (Batterien, Wasserstoff) parametrisiert werden.",
     "intro_text_bold": "Gesamtlast, installierte erneuerbare Energien und Energiespeicher",
-    "cta_box_title": "Try it out:",
-    "cta_box_text": "Ändere die Leistungswerte unten oder wechsle das Szenario, um mögliche zukünftige Entwicklungen des österreichischen Stromsystems zu erkunden.",
-    "info_box_text": "Mehr Infos zur Methodik, Daten, Annahmen und {info_box_strong} auf der {info_box_link}",
+    "info_box_text": "Mehr Infos zur Methodik, Daten, Annahmen und {info_box_strong} auf der {info_box_link}.",
     "info_box_strong": "wichtige Einschränkungen",
     "info_box_link": "Modell & Daten Seite"
   },
