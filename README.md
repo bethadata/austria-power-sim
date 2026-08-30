@@ -20,8 +20,7 @@ energy balance, renewable share and storage dynamics update as you type.
 - **Key performance indicators** — renewable share (%), annual overshoot and load gap (TWh)
 - **Interactive Plotly charts** — load and generation, annual energy balance, storage state of charge, residual load duration curve; each expandable to fullscreen
 - **Sticky control rail** — the inputs stay on screen beside the chart they move
-- **Bilingual** — German and English, with a persisted preference
-- **Light and dark themes** — chart chrome takes its colour from the theme, so a panel matches the card behind it in both modes
+- **Bilingual** — German and English
 - **Static deployment** — runs entirely in the browser, no server and no API keys
 
 ---
@@ -38,10 +37,6 @@ energy balance, renewable share and storage dynamics update as you type.
 | Routing | Vue Router (hash mode) | 5 |
 | i18n | Vue I18n | 11 |
 | Icons | Material Design Icons | 7 |
-| Browser tests | [Playwright](https://playwright.dev/) | 1.62 |
-
-The basic Plotly bundle is deliberate: the app draws scatter and bar only, and the full
-bundle costs about 3.5 MB more in the entry chunk.
 
 ---
 
@@ -64,27 +59,6 @@ npm run typecheck
 npm run preview      # serves dist/ on :4176
 npm run test:smoke   # headless browser assertions, exits non-zero on failure
 ```
-
-### Browser tests
-
-`test:smoke` runs against the built site, so it needs a preview server:
-
-```bash
-npx playwright install chromium   # once per machine
-npm run build && npm run preview &
-npm run test:smoke
-```
-
-It covers the failure class this app is exposed to — a chart that comes out blank looks
-exactly like a chart whose parameters produced nothing, and neither throws. In both
-locales it asserts identical `de`/`en` key sets, no raw locale key or unfilled
-`{placeholder}` in the HTML *or* in Plotly's SVG, four charts with real traces, KPI tiles
-carrying numbers, the control rail scrolling rather than clipping its cards at 1366×768,
-chart ink coming from the theme rather than Plotly's defaults in both modes, the plot
-following its card when the navigation drawer collapses, and no horizontal scroll at
-390 px.
-
----
 
 ## Project Structure
 
@@ -169,18 +143,6 @@ Power is in GW, energy in TWh, and one time step is one hour throughout.
 - The renewable share is an annual energy ratio, not a time-matched self-sufficiency figure, and can exceed 100 %
 
 Full documentation is on the **Model & Data** page of the running application.
-
----
-
-## Deployment
-
-Every push to `main` triggers
-[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds and publishes
-to GitHub Pages. The router uses hash mode because Pages serves static files with no
-rewrite rules, so a deep link under history mode would 404 on reload.
-
-To host under a different repository name, change `base` in
-[`vite.config.ts`](vite.config.ts).
 
 ---
 
